@@ -34,7 +34,7 @@ public class NeverGonnaGiveUpBeingHorny : MonoBehaviour
         GameObject temp;
         temp = GameObject.Find("God" + "(Clone)").gameObject;
         if (temp != null)
-            PlayerStatus.offsetPlayerSkill(temp);
+            EnemyStatus.offsetEnemySkill(temp);
     }
 
     private void Recover()

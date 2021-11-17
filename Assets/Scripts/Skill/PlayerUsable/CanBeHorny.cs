@@ -39,6 +39,6 @@ public class CanBeHorny : MonoBehaviour
         GameObject temp;
         temp = GameObject.Find("CantBeHorny" + "(Clone)").gameObject;
         if (temp != null)
-            PlayerStatus.offsetPlayerSkill(temp);
+            EnemyStatus.offsetEnemySkill(temp);
     }
 }

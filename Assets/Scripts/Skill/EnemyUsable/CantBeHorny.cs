@@ -41,7 +41,7 @@ public class CantBeHorny : MonoBehaviour
         if (temp != null)
         {
             Debug.Log("in");
-            EnemyStatus.offsetEnemySkill(temp);
+            PlayerStatus.offsetPlayerSkill(temp);
         }
     }
 }

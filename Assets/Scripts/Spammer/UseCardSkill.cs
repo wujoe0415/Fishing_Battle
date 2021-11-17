@@ -109,11 +109,12 @@ public class UseCardSkill : MonoBehaviour
     public void ResetSpecificFlag(string name)
     {
         int i = 0;
-        foreach(GameObject card in usableCards)
+        name = name.Remove(name.Length -7);
+        foreach (GameObject card in usableCards)
         {
-            if(card.name + "(Clone)" == name)
+            if (card.name/*(Clone)*/ == name)
             {
-                flag[i] = true;
+                flag[i] = false;
                 break;
             }
             i++;

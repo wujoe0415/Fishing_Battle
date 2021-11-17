@@ -22,7 +22,7 @@ public class MessUpDirection : MonoBehaviour
         GameObject temp;
         temp = GameObject.Find("INeedToBeHorny" + "(Clone)").gameObject;
         if (temp != null)
-            EnemyStatus.offsetEnemySkill(temp);
+            PlayerStatus.offsetPlayerSkill(temp);
     }
 
     private void Skill()

@@ -25,10 +25,10 @@ public class INeedToBeHorny : MonoBehaviour
         GameObject temp;
         temp = GameObject.Find("Shoot" + "(Clone)").gameObject;
         if (temp != null)
-            PlayerStatus.offsetPlayerSkill(temp);
+            EnemyStatus.offsetEnemySkill(temp);
         temp = GameObject.Find("MessUpDirection" + "(Clone)");
         if (temp != null)
-            PlayerStatus.offsetPlayerSkill(temp);
+            EnemyStatus.offsetEnemySkill(temp);
     }
 
     void StrengthPlayer()
