@@ -9,11 +9,15 @@ public class PlayerStatus : MonoBehaviour
     public static void addPlayerSkill(GameObject reference)
     {
         playersuffer.Add(reference);
+        foreach (GameObject status in playersuffer)
+        {
+            Debug.Log("playersuffer have :" + status.name);
+        }
     }
     public static void offsetPlayerSkill(GameObject offset)
     {
         UseCardSkill usecardskill = GameObject.Find("PlayerCardCollector").GetComponent<UseCardSkill>();
-        playersuffer.Remove(offset);
+        EnemyStatus.enemysuffer.Remove(offset);
         usecardskill.ResetSpecificFlag(offset.name);
         Destroy(offset);
         usecardskill.ReArrange();
@@ -28,5 +32,23 @@ public class PlayerStatus : MonoBehaviour
         
         playersuffer.Clear();
         usecardskill.ReArrange();
+    }
+    public static void UnAvailSkill(GameObject avail)
+    {
+        UseCardSkill usecardskill = GameObject.Find("PlayerCardCollector").GetComponent<UseCardSkill>();
+        usecardskill.LetSkillBeUnAvaliable(avail.name);
+        usecardskill.ReArrange();
+    }
+    public static bool Checkexist(string name)
+    {
+        foreach (GameObject a in playersuffer)
+        {
+            if (a.name == name)
+            {
+                playersuffer.Remove(a);
+                return true;
+            }
+        }
+        return false;
     }
 }

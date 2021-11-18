@@ -12,7 +12,8 @@ public class God : MonoBehaviour
         EnemyGetHurt = BattleInitiation.currentPlayer.GetComponent<GetHurt>();
         EnemyData = BattleInitiation.currentEnemy.GetComponent<GeneralHuman>();
         EnemyStatus.ClearAllEnemyStatus();
-        GodSkill();
+        EnemyStatus.UnAvailSkill(this.gameObject);
+        Check();
     }
     
     void OnDisable()
@@ -31,5 +32,15 @@ public class God : MonoBehaviour
     {
         EnemyData.def -= 10;
         EnemyData.atk -= 10;
+    }
+    private void Check()
+    {
+        GameObject temp;
+        if (EnemyStatus.Checkexist("Magician" + "(Clone)"))
+        {
+            temp = GameObject.Find("Magician" + "(Clone)").gameObject;
+            if (temp != null)
+                PlayerStatus.offsetPlayerSkill(temp);
+        }
     }
 }

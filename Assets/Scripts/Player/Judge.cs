@@ -21,16 +21,25 @@ public class Judge : MonoBehaviour
     public void JudgeWinorLose(string tag)
     {
         Destroy(battle.transform.GetChild(1).gameObject);
-        Destroy(battle.transform.GetChild(0).gameObject);
+        if(BattleInitiation.i == 4)
+            Destroy(battle.transform.GetChild(0).gameObject);
         bgm.Stop();
 
         if (tag == "Player") //lose
         {
+            Destroy(battle.transform.GetChild(0).gameObject);
             lose.SetActive(true);
             //GameOver
         }
-        if (tag == "Enemy") // win
+        else if (BattleInitiation.i == 4 && tag == "Enemy") // win
         {
+            //true win
+            win.SetActive(true);
+            Invoke("TurnOffWinLoseAudio", 5);
+        }
+        else if (tag == "Enemy") // win
+        {
+            //temp win
             win.SetActive(true);
             Invoke("TurnOffWinLoseAudio", 5);
         }

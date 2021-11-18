@@ -30,7 +30,7 @@ public class CardSpammer : MonoBehaviour
 
     private void Spam(GameObject card)
     {
-        Vector3 spamPosition = new Vector3(Random.Range(-8.8f,9.11f), /*-4.27*/0f, 0);
+        Vector3 spamPosition = new Vector3(Random.Range(-8.8f,9.11f), -2.5f, 0);
         Instantiate(card, spamPosition , Quaternion.Euler(0,0,0), this.gameObject.transform);
     }
 }

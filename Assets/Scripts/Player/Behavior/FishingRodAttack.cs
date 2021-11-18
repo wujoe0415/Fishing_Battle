@@ -6,7 +6,7 @@ public class FishingRodAttack : MonoBehaviour
 {
     [Header("EnemyData")]
     public GameObject currentEnemy;
-    private GetHurt enemyGetHurt;
+    public GetHurt enemyGetHurt;
     public GeneralHuman EnemyData;
     [Header("PlayerData")]
     public GeneralHuman PlayerData;

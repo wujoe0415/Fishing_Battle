@@ -22,13 +22,13 @@ public class INeedToBeHorny : MonoBehaviour
     }
     private void Check()
     {
-        GameObject temp;
-        temp = GameObject.Find("Shoot" + "(Clone)").gameObject;
-        if (temp != null)
-            EnemyStatus.offsetEnemySkill(temp);
-        temp = GameObject.Find("MessUpDirection" + "(Clone)");
-        if (temp != null)
-            EnemyStatus.offsetEnemySkill(temp);
+        if (PlayerStatus.Checkexist("MessUpDirection" + "(Clone)"))
+        {
+            GameObject temp;
+            temp = GameObject.Find("MessUpDirection" + "(Clone)");
+            if (temp != null)
+                EnemyStatus.offsetEnemySkill(temp);
+        }
     }
 
     void StrengthPlayer()

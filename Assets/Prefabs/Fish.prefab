@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d65ea4a6d584c409d254bab38337b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 400
   atk: 0
   def: 0
 --- !u!114 &2303952730986020330

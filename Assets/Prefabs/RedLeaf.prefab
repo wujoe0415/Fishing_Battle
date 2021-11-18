@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d65ea4a6d584c409d254bab38337b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  atk: 18
-  def: 4
+  hp: 300
+  atk: 90
+  def: 65
 --- !u!114 &5238014451532138089
 MonoBehaviour:
   m_ObjectHideFlags: 0

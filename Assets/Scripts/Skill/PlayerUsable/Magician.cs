@@ -12,6 +12,8 @@ public class Magician : MonoBehaviour
         PlayerData = BattleInitiation.currentPlayer.GetComponent<GeneralHuman>();
         PlayerGetHurt = BattleInitiation.currentPlayer.GetComponent<GetHurt>();
         PlayerStatus.ClearAllPlayerStatus();
+        //EnemyStatus.addEnemySkill(this.gameObject);
+        PlayerStatus.UnAvailSkill(this.gameObject);
         MagicianSkill();
         Check();
     }
@@ -24,20 +26,23 @@ public class Magician : MonoBehaviour
     void MagicianSkill()
     {
         PlayerData.atk += 50;
-        Debug.Log(PlayerData.hp - 15);
-        PlayerGetHurt.SufferDamage(PlayerData.hp - 15);
+        Debug.Log(PlayerData.hp - 500);
+        PlayerGetHurt.SufferDamage(PlayerData.hp - 500);
     }
     void Recover()
     {
         PlayerData.atk -= 50;
-        PlayerGetHurt.SufferDamage(PlayerData.hp - 50);
+        PlayerGetHurt.SufferDamage(PlayerData.hp - 500);
     }
 
     private void Check()
     {
         GameObject temp;
-        temp = GameObject.Find("Shoot" + "(Clone)").gameObject;
-        if (temp != null)
-            PlayerStatus.offsetPlayerSkill(temp);
+        if (PlayerStatus.Checkexist("Shoot" + "(Clone)"))
+        {
+            temp = GameObject.Find("Shoot" + "(Clone)").gameObject;
+            if (temp != null)
+                EnemyStatus.offsetEnemySkill(temp);
+        }
     }
 }

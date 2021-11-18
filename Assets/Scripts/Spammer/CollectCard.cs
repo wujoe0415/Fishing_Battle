@@ -12,7 +12,7 @@ public class CollectCard : MonoBehaviour
         if(collision.gameObject.tag== "Player")
         {
             PlayerCardCollector = GameObject.Find("PlayerCardCollector").GetComponent<Transform>();
-            if (PlayerCardCollector.childCount < 3)
+            if (PlayerCardCollector.childCount < 5)
             {
                 GameObject cardReference = Instantiate(cardSprite) as GameObject;
                 cardReference.gameObject.transform.SetParent(PlayerCardCollector);
@@ -23,7 +23,7 @@ public class CollectCard : MonoBehaviour
         else if(collision.gameObject.tag == "Enemy")
         {
             EnemyCardCollector = GameObject.Find("EnemyCardCollector").GetComponent<Transform>();
-            if (EnemyCardCollector.childCount < 3)
+            if (EnemyCardCollector.childCount < 5)
             {
                 GameObject cardReference = Instantiate(cardSprite) as GameObject;
                 cardReference.gameObject.transform.SetParent(EnemyCardCollector);

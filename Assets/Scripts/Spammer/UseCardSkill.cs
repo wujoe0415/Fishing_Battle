@@ -23,12 +23,12 @@ public class UseCardSkill : MonoBehaviour
     {
         if (this.gameObject.tag == "PlayerBar")
         {
-            if (Input.GetKey(KeyCode.C) && this.gameObject.transform.childCount >= 3 && PlayerStatus.playersuffer.Count < usableCards.Count)
+            if (Input.GetKey(KeyCode.C) && this.gameObject.transform.childCount >= 3 && isThereRemainingSkill())
                 UseCard();
         }
         else if(this.gameObject.tag == "EnemyBar")
         {
-            if (this.gameObject.transform.childCount >= 3 && EnemyStatus.enemysuffer.Count < usableCards.Count)
+            if (this.gameObject.transform.childCount >= 3 && isThereRemainingSkill())
                 UseCard();
         }
     }
@@ -39,12 +39,11 @@ public class UseCardSkill : MonoBehaviour
         Destroy(this.gameObject.transform.GetChild(1).gameObject);
         Destroy(this.gameObject.transform.GetChild(0).gameObject);
         // reduce 3 with 1 skill
-
         //Instantiate Card and Sample
         GameObject randomCard;
-        while(true)
+        while(isThereRemainingSkill())
         {
-            index = Random.Range(0, usableCards.Count - 1);
+            index = Random.Range(0, usableCards.Count);
             if (this.gameObject.tag == "EnemyBar" && !flag[index]) 
             {
                 flag[index] = true;
@@ -73,8 +72,17 @@ public class UseCardSkill : MonoBehaviour
             PlayerStatus.addPlayerSkill(randomCard);
         else if (this.gameObject.tag == "PlayerBar")
             EnemyStatus.addEnemySkill(randomCard);
-        
+
         //note
+
+        ArrangeOriginCard();
+    }
+    private void ArrangeOriginCard()
+    {
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            this.transform.GetChild(i).transform.position = new Vector3(-7.35f + 0.65f * (i - 3)/*Destroy do not destory immediately*/, 2.65f, 0);
+        }
     }
     public void ReArrange()
     {
@@ -120,5 +128,27 @@ public class UseCardSkill : MonoBehaviour
             i++;
         }
     }
-    
+    public void LetSkillBeUnAvaliable(string name)
+    {
+        int i = 0;
+        name = name.Remove(name.Length - 7);
+        foreach (GameObject card in usableCards)
+        {
+            if (card.name/*(Clone)*/ == name)
+            {
+                flag[i] = true;
+                break;
+            }
+            i++;
+        }
+    }
+    private bool isThereRemainingSkill()
+    {
+        for(int i = 0;i < flag.Length;i++)
+        {
+            if (!flag[i])
+                return true;
+        }
+        return false;
+    }
 }

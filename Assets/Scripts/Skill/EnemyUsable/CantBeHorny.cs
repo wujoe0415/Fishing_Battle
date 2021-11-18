@@ -37,11 +37,13 @@ public class CantBeHorny : MonoBehaviour
     }
     private void Check()
     {
-        temp = GameObject.Find("CanBeHorny" + "(Clone)").gameObject;
-        if (temp != null)
+        if (EnemyStatus.Checkexist("CanBeHorny" + "(Clone)"))
         {
-            Debug.Log("in");
-            PlayerStatus.offsetPlayerSkill(temp);
+            temp = GameObject.Find("CanBeHorny" + "(Clone)").gameObject;
+            if (temp != null)
+            {
+                PlayerStatus.offsetPlayerSkill(temp);
+            }
         }
     }
 }

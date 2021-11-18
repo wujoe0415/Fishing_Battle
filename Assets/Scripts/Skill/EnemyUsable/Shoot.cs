@@ -27,10 +27,13 @@ public class Shoot : MonoBehaviour
     }
     private void Check()
     {
-        GameObject temp;
-        temp = GameObject.Find("INeedToBeHorny" + "(Clone)").gameObject;
-        if (temp != null)
-            PlayerStatus.offsetPlayerSkill(temp);
+        if (EnemyStatus.Checkexist("CanBeHorny" + "(Clone)"))
+        {
+            GameObject temp;
+            temp = GameObject.Find("INeedToBeHorny" + "(Clone)").gameObject;
+            if (temp != null)
+                PlayerStatus.offsetPlayerSkill(temp);
+        }
     }
 
     private void Recover()
