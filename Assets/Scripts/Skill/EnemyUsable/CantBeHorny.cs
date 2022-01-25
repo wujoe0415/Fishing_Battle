@@ -6,6 +6,7 @@ public class CantBeHorny : MonoBehaviour
 {
     GeneralHuman Player;
     GeneralHuman Enemy;
+    GetHurt enemyPlus;
 
     public GameObject temp;
     public int debuffAtk = 5;
@@ -16,6 +17,7 @@ public class CantBeHorny : MonoBehaviour
     {
         Player = BattleInitiation.currentPlayer.GetComponent<GeneralHuman>();
         Enemy = BattleInitiation.currentEnemy.GetComponent<GeneralHuman>();
+        enemyPlus = BattleInitiation.currentEnemy.GetComponent<GetHurt>();
         WeakenPlayerAndStrength();
         Check();
     }
@@ -25,7 +27,7 @@ public class CantBeHorny : MonoBehaviour
         Player.atk -= debuffAtk;
         Player.def -= debuffDef;
 
-        Enemy.hp += recoverHP;
+        enemyPlus.RecoverHealth(recoverHP);
     }
 
     void OnDisable()

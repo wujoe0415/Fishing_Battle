@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484939c4eeb3e174a9de9b13bb9e9d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defensePersentage: 0
+  defensePersentage: 0.5
   attackCycle: 1.4
   maxTimeGap: 1.5
   playerSuffer: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
   shield: {fileID: 5238014451992498026}
   audioSource: {fileID: 5238014451532138092}
   attackClip: {fileID: 8300000, guid: bce5ce25961f6af42b41e6e55f9031e0, type: 3}
-  attackTime: 0.9
+  attackFrame: 0.55
   defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
   volume: 0.5
 --- !u!114 &5238014451532138091
@@ -183,7 +183,7 @@ MonoBehaviour:
   horizontal: 0.01
   targetPosition: {x: 0, y: 0, z: 0}
   playerPosition: {fileID: 0}
-  timeAdjust: 600
+  speedAdjust: 1000
   stayTime: 0
   timer: 0
   isStaying: 0

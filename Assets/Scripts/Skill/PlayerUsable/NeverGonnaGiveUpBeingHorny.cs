@@ -30,7 +30,7 @@ public class NeverGonnaGiveUpBeingHorny : MonoBehaviour
         if (PlayerData.hp < 50)
             PlayerPlus.SufferDamage(PlayerData.hp - 100);
         else
-            PlayerData.hp += recoverHp;
+            PlayerPlus.RecoverHealth(recoverHp);
     }
 
     private void Check()

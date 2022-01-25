@@ -30,7 +30,7 @@ public class RandomAttack : MonoBehaviour
     [Header("Audio Clip")]
     public AudioSource audioSource;
     public AudioClip attackClip;
-    public float attackTime;
+    public float attackFrame;
     public AudioClip defendClip;
     [Range(0.0f,1.0f)]
     public float volume = 0.5f;
@@ -76,18 +76,19 @@ public class RandomAttack : MonoBehaviour
     
     void EnemyAttack()
     {
+        Debug.Log("attacking");
         //Animation
         a_animator.SetTrigger("Attack");
         //Audio
         audioSource.Play();
-        Invoke("Delay", attackTime + 0.1f);
+        canAttack = false;
+        Invoke("Delay", waitForFrame(attackFrame));
 
         if (ishitPlayer())
         {
-            canAttack = false;
             playerSuffer.SufferDamage(Self.atk - Player.def);
             // Recovery
-            attackCycle = Random.Range(0.0f, maxTimeGap);
+            attackCycle = Random.Range(0.5f, maxTimeGap);
             timer = 0f;
         }
         
@@ -107,11 +108,13 @@ public class RandomAttack : MonoBehaviour
         Invoke("DEFDelay", 0.2f);
         shield.SetActive(true);
         Self.def *= 2;
-        //Recovery
+        
     }
+    //Recovery
     void Shielddelay()
     {
         shield.SetActive(false);
+        Self.def /= 2;
     }
 
     void DEFDelay()
@@ -124,5 +127,9 @@ public class RandomAttack : MonoBehaviour
     void Delay()
     {
         canAttack = true;
+    }
+    private float waitForFrame(float frame)
+    {
+        return frame / 0.6f;
     }
 }

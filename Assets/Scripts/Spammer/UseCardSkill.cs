@@ -23,12 +23,12 @@ public class UseCardSkill : MonoBehaviour
     {
         if (this.gameObject.tag == "PlayerBar")
         {
-            if (Input.GetKey(KeyCode.C) && this.gameObject.transform.childCount >= 3 && isThereRemainingSkill())
+            if (!PauseGame.isPause && Input.GetKey(KeyCode.C) && this.gameObject.transform.childCount >= 3 && isThereRemainingSkill())
                 UseCard();
         }
         else if(this.gameObject.tag == "EnemyBar")
         {
-            if (this.gameObject.transform.childCount >= 3 && isThereRemainingSkill())
+            if (!PauseGame.isPause && this.gameObject.transform.childCount >= 3 && isThereRemainingSkill())
                 UseCard();
         }
     }

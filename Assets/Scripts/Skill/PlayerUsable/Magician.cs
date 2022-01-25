@@ -14,7 +14,7 @@ public class Magician : MonoBehaviour
         PlayerGetHurt = BattleInitiation.currentPlayer.GetComponent<GetHurt>();
         PlayerStatus.ClearAllPlayerStatus();
         //EnemyStatus.addEnemySkill(this.gameObject);
-        PlayerStatus.UnAvailSkill(this.gameObject);
+        //PlayerStatus.UnAvailSkill(this.gameObject);
         MagicianSkill();
         Check();
     }

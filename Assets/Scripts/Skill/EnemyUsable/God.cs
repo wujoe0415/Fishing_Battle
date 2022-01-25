@@ -16,7 +16,7 @@ public class God : MonoBehaviour
         EnemyGetHurt = BattleInitiation.currentPlayer.GetComponent<GetHurt>();
         EnemyData = BattleInitiation.currentEnemy.GetComponent<GeneralHuman>();
         EnemyStatus.ClearAllEnemyStatus();
-        EnemyStatus.UnAvailSkill(this.gameObject);
+        //EnemyStatus.UnAvailSkill(this.gameObject);
         Check();
     }
     
@@ -28,7 +28,7 @@ public class God : MonoBehaviour
     void GodSkill()
     {
         EnemyData.def += buffDef;
-        EnemyGetHurt.SufferDamage(recoverHp * -1);
+        EnemyGetHurt.RecoverHelath(recoverHp);
         EnemyData.atk += buffAtk;
     }
 

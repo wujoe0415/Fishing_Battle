@@ -44,6 +44,9 @@ public class GetHurt : MonoBehaviour
     public void SufferDamage(int damage)
     {
         sa_animator.SetTrigger("SufferAttack");
+        if (damage < 0) // invalid damage
+            return;
+
         currentHealth -= damage;
         if (currentHealth < 1)
             judge.JudgeWinorLose(this.gameObject.tag);
@@ -51,6 +54,16 @@ public class GetHurt : MonoBehaviour
         bar.SetHealth(currentHealth >= 0 ? currentHealth : 0);
         ch.SetHealth(currentHealth >= 0 ? currentHealth : 0);
         Self.hp = currentHealth >= 0 ? currentHealth : 0;
+    }
+    public void RecoverHealth(int recover)
+    {
+        currentHealth += recover;
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+
+        bar.SetHealth(currentHealth);
+        ch.SetHealth(currentHealth);
+        Self.hp = currentHealth;
     }
     public void SufferSkill(int damage)
     {

@@ -26,20 +26,21 @@ public class EnemyStatus : MonoBehaviour
     {
         UseCardSkill usecardskill = GameObject.Find("EnemyCardCollector").GetComponent<UseCardSkill>();
         usecardskill.ResetAllFlags();
-        
+
         foreach (GameObject skill in enemysuffer)
-            Destroy(GameObject.Find(skill.name + "(Clone)"));
-        
+        {
+            Debug.Log(skill.name);
+            Destroy(GameObject.Find(skill.name));
+        }
         enemysuffer.Clear();
         usecardskill.ReArrange();
-
     }
-    public static void UnAvailSkill(GameObject avail)
-    {
-        UseCardSkill usecardskill = GameObject.Find("EnemyCardCollector").GetComponent<UseCardSkill>();
-        usecardskill.LetSkillBeUnAvaliable(avail.name);
-        usecardskill.ReArrange();
-    }
+    //public static void UnAvailSkill(GameObject avail)
+    //{
+    //    UseCardSkill usecardskill = GameObject.Find("EnemyCardCollector").GetComponent<UseCardSkill>();
+    //    usecardskill.LetSkillBeUnAvaliable(avail.name);
+    //    usecardskill.ReArrange();
+    //}
     public static bool Checkexist(string name)
     {
         foreach(GameObject a in enemysuffer)

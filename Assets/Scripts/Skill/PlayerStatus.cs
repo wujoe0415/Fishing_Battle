@@ -10,9 +10,8 @@ public class PlayerStatus : MonoBehaviour
     {
         playersuffer.Add(reference);
         foreach (GameObject status in playersuffer)
-        {
             Debug.Log("playersuffer have :" + status.name);
-        }
+        
     }
     public static void offsetPlayerSkill(GameObject offset)
     {
@@ -26,10 +25,12 @@ public class PlayerStatus : MonoBehaviour
     {
         UseCardSkill usecardskill = GameObject.Find("PlayerCardCollector").GetComponent<UseCardSkill>();
         usecardskill.ResetAllFlags();
-        
+
         foreach (GameObject skill in playersuffer)
-            Destroy(GameObject.Find(skill.name + "(Clone)"));
-        
+        {
+            Debug.Log(skill.name);
+            Destroy(GameObject.Find(skill.name));
+        }
         playersuffer.Clear();
         usecardskill.ReArrange();
     }
