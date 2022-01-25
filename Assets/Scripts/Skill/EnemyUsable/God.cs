@@ -28,7 +28,7 @@ public class God : MonoBehaviour
     void GodSkill()
     {
         EnemyData.def += buffDef;
-        EnemyGetHurt.RecoverHelath(recoverHp);
+        EnemyGetHurt.RecoverHealth(recoverHp);
         EnemyData.atk += buffAtk;
     }
 

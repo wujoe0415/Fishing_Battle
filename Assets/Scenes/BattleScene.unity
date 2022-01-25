@@ -2753,7 +2753,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1963492673}
   - component: {fileID: 1963492674}
-  - component: {fileID: 1963492675}
   m_Layer: 0
   m_Name: BattleArena
   m_TagString: Battle
@@ -2800,19 +2799,6 @@ MonoBehaviour:
   - {fileID: 5238014451532138069, guid: 22bea0874ef5232448e96437579b0dd8, type: 3}
   - {fileID: 7523755558025598120, guid: e83fa1ad7d5b5284baae89f405804340, type: 3}
   BattleArena: {fileID: 1963492673}
---- !u!114 &1963492675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963492672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb6811a1cabc3d946b08a6f717fc889a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseUI: {fileID: 0}
 --- !u!1 &1989280171
 GameObject:
   m_ObjectHideFlags: 0
