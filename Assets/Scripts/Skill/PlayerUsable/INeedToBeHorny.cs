@@ -7,6 +7,10 @@ public class INeedToBeHorny : MonoBehaviour
     GeneralHuman Player;
     GeneralHuman Enemy;
     GetHurt EenmyHurt;
+
+    public int buffAtk = 20;
+    public int buffDef = 10;
+    public int directDamage = 30;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,14 +37,14 @@ public class INeedToBeHorny : MonoBehaviour
 
     void StrengthPlayer()
     {
-        Player.atk += 20;
-        Player.def += 10;
+        Player.atk += buffAtk;
+        Player.def += buffDef;
 
-        EenmyHurt.SufferDamage(30);
+        EenmyHurt.SufferDamage(directDamage);
     }
     void Recover()
     {
-        Player.atk -= 20;
-        Player.def -= 10;
+        Player.atk -= buffAtk;
+        Player.def -= buffDef;
     }
 }

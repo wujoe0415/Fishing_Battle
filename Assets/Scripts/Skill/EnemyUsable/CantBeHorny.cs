@@ -8,6 +8,9 @@ public class CantBeHorny : MonoBehaviour
     GeneralHuman Enemy;
 
     public GameObject temp;
+    public int debuffAtk = 5;
+    public int debuffDef = 10;
+    public int recoverHP = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +22,10 @@ public class CantBeHorny : MonoBehaviour
 
     void WeakenPlayerAndStrength()
     {
-        Player.atk -= 5;
-        Player.def -= 10;
+        Player.atk -= debuffAtk;
+        Player.def -= debuffDef;
 
-        Enemy.hp += 20;
+        Enemy.hp += recoverHP;
     }
 
     void OnDisable()
@@ -32,8 +35,8 @@ public class CantBeHorny : MonoBehaviour
 
     void Recover()
     {
-        Player.atk += 5;
-        Player.def += 10;
+        Player.atk += debuffAtk;
+        Player.def += debuffDef;
     }
     private void Check()
     {

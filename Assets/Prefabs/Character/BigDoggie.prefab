@@ -84,8 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d65ea4a6d584c409d254bab38337b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1000
-  atk: 80
+  hp: 400
+  atk: 50
   def: 50
 --- !u!212 &1651856108393704675
 SpriteRenderer:
@@ -233,6 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentEnemy: {fileID: 0}
+  enemyGetHurt: {fileID: 0}
   EnemyData: {fileID: 0}
   PlayerData: {fileID: 0}
   attackPoint: {fileID: 1651856107986098954}

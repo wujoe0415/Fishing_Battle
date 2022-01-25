@@ -6,6 +6,10 @@ public class God : MonoBehaviour
 {
     GeneralHuman EnemyData;
     GetHurt EnemyGetHurt;
+
+    public int buffAtk = 10;
+    public int buffDef = 10;
+    public int recoverHp = 50;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,15 +27,15 @@ public class God : MonoBehaviour
 
     void GodSkill()
     {
-        EnemyData.def += 10;
-        EnemyGetHurt.SufferDamage(-50);
-        EnemyData.atk += 10;
+        EnemyData.def += buffDef;
+        EnemyGetHurt.SufferDamage(recoverHp * -1);
+        EnemyData.atk += buffAtk;
     }
 
     void Recover()
     {
-        EnemyData.def -= 10;
-        EnemyData.atk -= 10;
+        EnemyData.def -= buffDef;
+        EnemyData.atk -= buffAtk;
     }
     private void Check()
     {

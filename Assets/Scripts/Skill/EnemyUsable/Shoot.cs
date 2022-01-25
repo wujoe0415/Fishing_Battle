@@ -6,6 +6,8 @@ public class Shoot : MonoBehaviour
 {
     public GeneralHuman EnemyData;
     public GetHurt playerSuffer;
+    public int buffAttack = 50;
+    public int shootDamage = 200;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +19,8 @@ public class Shoot : MonoBehaviour
 
     private void BoostATK()
     {
-        EnemyData.atk += 10;
-        playerSuffer.SufferDamage(10);
+        EnemyData.atk += buffAttack;
+        playerSuffer.SufferDamage(shootDamage);
     }
 
     private void OnDisable()
@@ -38,6 +40,6 @@ public class Shoot : MonoBehaviour
 
     private void Recover()
     {
-        EnemyData.atk -= 10;
+        EnemyData.atk -= buffAttack;
     }
 }

@@ -6,6 +6,9 @@ public class NeverGonnaGiveUpBeingHorny : MonoBehaviour
 {
     GeneralHuman PlayerData;
     GetHurt PlayerPlus;
+    public int recoverHp = 30;
+    public int buffDef = 30;
+    public int buffAtk = 30;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +24,13 @@ public class NeverGonnaGiveUpBeingHorny : MonoBehaviour
 
     private void Skill()
     {
+        PlayerData.def += buffDef;
+        PlayerData.atk += buffAtk;
+
         if (PlayerData.hp < 50)
             PlayerPlus.SufferDamage(PlayerData.hp - 100);
-
-        PlayerData.def += 30;
-        PlayerData.atk += 30;
-        PlayerData.hp += 30;
+        else
+            PlayerData.hp += recoverHp;
     }
 
     private void Check()
@@ -42,7 +46,7 @@ public class NeverGonnaGiveUpBeingHorny : MonoBehaviour
 
     private void Recover()
     {
-        PlayerData.def -= 30;
-        PlayerData.atk -= 30;
+        PlayerData.def -= buffDef;
+        PlayerData.atk -= buffAtk;
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bonk : MonoBehaviour
 {
     public GetHurt playerSuffer;
+
+    public int directDamage = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,7 @@ public class Bonk : MonoBehaviour
 
     private void BonkDamage()
     {
-        playerSuffer.SufferDamage(50);
+        playerSuffer.SufferDamage(directDamage);
     }
 
 }

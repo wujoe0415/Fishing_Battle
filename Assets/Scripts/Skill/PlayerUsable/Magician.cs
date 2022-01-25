@@ -6,6 +6,7 @@ public class Magician : MonoBehaviour
 {
     GeneralHuman PlayerData;
     GetHurt PlayerGetHurt;
+    public int buffAttack = 50;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,14 +26,14 @@ public class Magician : MonoBehaviour
 
     void MagicianSkill()
     {
-        PlayerData.atk += 50;
-        Debug.Log(PlayerData.hp - 500);
-        PlayerGetHurt.SufferDamage(PlayerData.hp - 500);
+        PlayerData.atk += buffAttack;
+        //Debug.Log(PlayerData.hp - 500);
+        PlayerGetHurt.SufferDamage(PlayerData.hp / 2);
     }
     void Recover()
     {
-        PlayerData.atk -= 50;
-        PlayerGetHurt.SufferDamage(PlayerData.hp - 500);
+        PlayerData.atk -= buffAttack;
+        //PlayerGetHurt.SufferDamage(PlayerData.hp - 500);
     }
 
     private void Check()
