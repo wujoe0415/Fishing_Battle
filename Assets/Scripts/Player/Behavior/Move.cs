@@ -6,6 +6,7 @@ public class Move : MonoBehaviour
 {
     public float vetical = 0.1f;
     public float horizontal = 0.1f;
+    public float speedAdjust = 400f;
     //private bool jumpingCheck = false;
     public bool groundCheck = false;
     public int jumpforce = 1;
@@ -28,10 +29,10 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow) && groundCheck)
-        {
-            rigidbody2D.AddForce(Vector3.up * jumpforce);
-        }
+        //if (input.getkey(keycode.uparrow) && groundcheck)
+        //{
+        //    rigidbody2d.addforce(vector3.up * jumpforce);
+        //}
         /*if (Input.GetKey(KeyCode.DownArrow))
             this.gameObject.transform.position += new Vector3(0f, -1 * vetical, 0f);*/
         if (isMessUp)
@@ -45,15 +46,17 @@ public class Move : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             if (transform.position.x <= 8.5)
-                this.gameObject.transform.position += new Vector3(horizontal, 0f, 0f);
-            playerSpriteRenderer.flipX = false;
+                this.gameObject.transform.position += new Vector3(horizontal, 0f, 0f) * Time.deltaTime * speedAdjust;
+            if(!PauseGame.isPause) // not pause
+                playerSpriteRenderer.flipX = false;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             if (transform.position.x > -8.5)
-                this.gameObject.transform.position += new Vector3(-1 * horizontal, 0f, 0f);
-            playerSpriteRenderer.flipX = true;
+                this.gameObject.transform.position += new Vector3(-1 * horizontal, 0f, 0f) * Time.deltaTime * speedAdjust;
+            if(!PauseGame.isPause) // not pause
+                playerSpriteRenderer.flipX = true;
         }
     }
 
@@ -62,15 +65,17 @@ public class Move : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             if (transform.position.x <= 8.5)
-                this.gameObject.transform.position += new Vector3(horizontal, 0f, 0f);
-            playerSpriteRenderer.flipX = false;
+                this.gameObject.transform.position += new Vector3(horizontal, 0f, 0f) * Time.deltaTime * speedAdjust;
+            if (!PauseGame.isPause) // not pause
+                playerSpriteRenderer.flipX = false;
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             if (transform.position.x > -8.5)
-                this.gameObject.transform.position += new Vector3(-1 * horizontal, 0f, 0f);
-            playerSpriteRenderer.flipX = true;
+                this.gameObject.transform.position += new Vector3(-1 * horizontal, 0f, 0f) * Time.deltaTime * speedAdjust;
+            if (!PauseGame.isPause) // not pause
+                playerSpriteRenderer.flipX = true;
         }
     }
 

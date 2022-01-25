@@ -178,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vetical: 0.02
   horizontal: 0.02
+  timeAdjust: 400
   groundCheck: 0
   jumpforce: 200
   playerSpriteRenderer: {fileID: 0}

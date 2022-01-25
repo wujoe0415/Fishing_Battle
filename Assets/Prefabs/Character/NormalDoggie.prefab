@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vetical: 0.02
   horizontal: 0.01
+  timeAdjust: 400
   groundCheck: 0
   jumpforce: 200
   playerSpriteRenderer: {fileID: 0}
@@ -202,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentEnemy: {fileID: 0}
+  enemyGetHurt: {fileID: 0}
   EnemyData: {fileID: 0}
   PlayerData: {fileID: 0}
   attackPoint: {fileID: 7301067920292265802}

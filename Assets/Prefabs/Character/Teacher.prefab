@@ -213,6 +213,7 @@ MonoBehaviour:
   horizontal: 0.002
   targetPosition: {x: 0, y: 0, z: 0}
   playerPosition: {fileID: 0}
+  timeAdjust: 600
   stayTime: 0
   timer: 0
   isStaying: 0

@@ -44,14 +44,14 @@ public class FishingRodAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canAttack && Input.GetKeyDown(KeyCode.A))
+        if (!PauseGame.isPause && canAttack && Input.GetKeyDown(KeyCode.A))
             Attack();
         
-        if (Input.GetKeyDown(KeyCode.D))
+        if (!PauseGame.isPause && Input.GetKeyDown(KeyCode.D))
         {
             Defense();
         }
-        if (Input.GetKeyUp(KeyCode.D))
+        if (!PauseGame.isPause && Input.GetKeyUp(KeyCode.D))
         {
             if (shield.activeInHierarchy)
             {
