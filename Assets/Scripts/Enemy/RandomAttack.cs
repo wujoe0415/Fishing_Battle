@@ -20,6 +20,8 @@ public class RandomAttack : MonoBehaviour
     public Vector3 rightAttackpoint;
     public Transform playerPosition;
     public static bool enemyHasShield = false;
+    public static bool isAttacking = false;
+    public float attackFrame;
     /* public float attackRange = 1.0f;
      public LayerMask playerLayer;*/
      
@@ -30,7 +32,6 @@ public class RandomAttack : MonoBehaviour
     [Header("Audio Clip")]
     public AudioSource audioSource;
     public AudioClip attackClip;
-    public float attackFrame;
     public AudioClip defendClip;
     [Range(0.0f,1.0f)]
     public float volume = 0.5f;
@@ -82,6 +83,7 @@ public class RandomAttack : MonoBehaviour
         //Audio
         audioSource.Play();
         canAttack = false;
+        isAttacking = true;
         Invoke("Delay", waitForFrame(attackFrame));
 
         if (ishitPlayer())
@@ -89,9 +91,9 @@ public class RandomAttack : MonoBehaviour
             playerSuffer.SufferDamage(Self.atk - Player.def);
             // Recovery
             attackCycle = Random.Range(0.5f, maxTimeGap);
-            timer = 0f;
+            
         }
-        
+        timer = 0f;
         
     }
     private bool ishitPlayer()
@@ -127,6 +129,7 @@ public class RandomAttack : MonoBehaviour
     void Delay()
     {
         canAttack = true;
+        isAttacking = false;
     }
     private float waitForFrame(float frame)
     {

@@ -87,9 +87,7 @@ public class Rush : MonoBehaviour
             m_spriteRenderer.flipX = true;
             return;
         }
-
-        Debug.Log("Rush To Left");
-        Debug.Log(Vector3.left * speed * Time.deltaTime);
+        
         this.gameObject.transform.position += Vector3.left * speed * Time.deltaTime;
     }
     void RushToRight()
@@ -100,8 +98,7 @@ public class Rush : MonoBehaviour
             m_spriteRenderer.flipX = false;
             return;
         }
-
-        Debug.Log("Rush To Right");
+        
         this.gameObject.transform.position += Vector3.right * speed * Time.deltaTime;
     }
     void returnToOrigin()
@@ -109,12 +106,10 @@ public class Rush : MonoBehaviour
         if(originPoaition.x > this.gameObject.transform.position.x)
         {
             StopCoroutine(coroutine); // skill cd
-            Debug.Log("skillFinish");
             finishSkill = true;
             return;
         }
-
-        Debug.Log("Rush To Origin");
+        
         this.gameObject.transform.position += Vector3.left * speed * Time.deltaTime;
     }
     void CDset()

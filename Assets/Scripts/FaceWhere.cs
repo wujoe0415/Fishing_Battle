@@ -9,14 +9,14 @@ public static class FaceWhere
         string name = target.name;
         if (target.GetComponent<SpriteRenderer>().flipX)
         {
-            if (name == "RedLeaf" || name == "Fish" || name == "Teacher" ||  name == "NormalDoggie")
+            if (name == "RedLeaf" || name == "Fish" || name == "Teacher" ||  name == "NormalDoggie" || name == "FishBoss")
                 return true;
             else
                 return false;
         }
         else
         {
-            if (name == "RedLeaf" || name == "Fish" || name == "Teacher" || name == "NormalDoggie")
+            if (name == "RedLeaf" || name == "Fish" || name == "Teacher" || name == "NormalDoggie" || name == "FishBoss")
                 return false;
             else
                 return true;

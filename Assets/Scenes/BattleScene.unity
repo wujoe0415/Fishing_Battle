@@ -645,7 +645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &451483276
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -685,7 +685,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: fb68dedf1872ae34392d04a101914ed9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2794,7 +2794,7 @@ MonoBehaviour:
   - {fileID: 1651856108393704672, guid: a82c91b20be3e1840afda3b6f62a6831, type: 3}
   - {fileID: 1651856108393704672, guid: a82c91b20be3e1840afda3b6f62a6831, type: 3}
   EnemyPrefabs:
-  - {fileID: 2303952730986020332, guid: f34a7290b66e9d840921e6a10ee6377b, type: 3}
+  - {fileID: 2303952730986020332, guid: a4c799f87e3d31b4d9e8da0dd3a62b70, type: 3}
   - {fileID: 7483046275373265563, guid: da4c95a98ed1f6448ba9bbe400343df0, type: 3}
   - {fileID: 6184868137883538524, guid: 0588e600c66debe43a278463834344e0, type: 3}
   - {fileID: 5238014451532138069, guid: 22bea0874ef5232448e96437579b0dd8, type: 3}
