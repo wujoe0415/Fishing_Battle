@@ -97,9 +97,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 4.1
   originGap: 1.61
-  speed: 1
+  speed: 0.05
   sizeGrowRate: 1.003
-  cd: 1
+  cd: 1.47
 --- !u!1 &2303952730256864710
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defensePersentage: 0
   attackCycle: 1
-  maxTimeGap: 10
+  maxTimeGap: 5
   playerSuffer: {fileID: 0}
   Self: {fileID: 2303952730986020331}
   Player: {fileID: 0}
