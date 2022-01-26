@@ -21,7 +21,7 @@ public class Judge : MonoBehaviour
     public void JudgeWinorLose(string tag)
     {
         Destroy(battle.transform.GetChild(1).gameObject);
-        if(BattleInitiation.i == 4)
+        if(BattleInitiation.i == 5)
             Destroy(battle.transform.GetChild(0).gameObject);
         bgm.Stop();
 
@@ -31,7 +31,7 @@ public class Judge : MonoBehaviour
             lose.SetActive(true);
             //GameOver
         }
-        else if (BattleInitiation.i == 4 && tag == "Enemy") // win
+        else if (BattleInitiation.i == 5 && tag == "Enemy") // win
         {
             //true win
             win.SetActive(true);
@@ -52,7 +52,7 @@ public class Judge : MonoBehaviour
 
         //Initiate Nect Fight
         indexFight++;
-        if(indexFight == 5)
+        if(indexFight == 6)
         {
             //GameOver
         }

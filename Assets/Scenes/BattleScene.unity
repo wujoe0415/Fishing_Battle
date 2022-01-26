@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891590}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: Judgement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2792,12 +2792,14 @@ MonoBehaviour:
   - {fileID: 1651856108393704672, guid: a82c91b20be3e1840afda3b6f62a6831, type: 3}
   - {fileID: 1651856108393704672, guid: a82c91b20be3e1840afda3b6f62a6831, type: 3}
   - {fileID: 1651856108393704672, guid: a82c91b20be3e1840afda3b6f62a6831, type: 3}
+  - {fileID: 1651856108393704672, guid: a82c91b20be3e1840afda3b6f62a6831, type: 3}
   EnemyPrefabs:
   - {fileID: 2303952730986020332, guid: f34a7290b66e9d840921e6a10ee6377b, type: 3}
   - {fileID: 7483046275373265563, guid: da4c95a98ed1f6448ba9bbe400343df0, type: 3}
   - {fileID: 6184868137883538524, guid: 0588e600c66debe43a278463834344e0, type: 3}
   - {fileID: 5238014451532138069, guid: 22bea0874ef5232448e96437579b0dd8, type: 3}
   - {fileID: 7523755558025598120, guid: e83fa1ad7d5b5284baae89f405804340, type: 3}
+  - {fileID: 2303952730986020332, guid: a4c799f87e3d31b4d9e8da0dd3a62b70, type: 3}
   BattleArena: {fileID: 1963492673}
 --- !u!1 &1989280171
 GameObject:

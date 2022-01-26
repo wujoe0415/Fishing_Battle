@@ -48,8 +48,9 @@ GameObject:
   - component: {fileID: 2303952730986020335}
   - component: {fileID: 2303952730986020334}
   - component: {fileID: -6495860130698129133}
+  - component: {fileID: 903411601}
   m_Layer: 9
-  m_Name: Fish
+  m_Name: FishBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -364,6 +365,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &903411601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303952730986020332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2f979e24cc43442bc00b55280ac5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: 652d3d328a9d69e4cb31d15192ec1955, type: 3}
+  volume: 0.5
+  leftX: -8.75
+  rightX: 8.75
+  speed: 10
+  skillCD: 10
 --- !u!1 &2303952731618963398
 GameObject:
   m_ObjectHideFlags: 0
