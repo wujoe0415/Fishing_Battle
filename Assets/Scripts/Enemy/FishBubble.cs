@@ -12,18 +12,20 @@ public class FishBubble : MonoBehaviour
     public float speed = 100f;
     [Range(1.0f,1.02f)]
     public float sizeGrowRate = 1.01f;
-    [Range(0.0f, 2.0f)]
+    [Range(0.0f, 5.0f)]
     public float cd = 1.0f;
     private float deltaX = 0f;
     
     IEnumerator coroutine;
     bool isRelease = false;
+    bool invokeFlag = false;
     
     // Update is called once per frame
     void Update()
     {
-        if (RandomAttack.isAttacking)
+        if (RandomAttack.isAttacking && !isRelease)
         {
+            Debug.Log("in Attack");
             isRelease = true;
             if (FaceWhere.isFaceRight(this.gameObject.transform.parent.gameObject))
                 coroutine = Attack("Right");
@@ -32,21 +34,22 @@ public class FishBubble : MonoBehaviour
 
             StartCoroutine(coroutine);
         }
-        else if(!RandomAttack.isAttacking)
+        //else if(!RandomAttack.isAttacking && isRelease)
+        //{
+        //    if (FaceWhere.isFaceRight(this.gameObject.transform.parent.gameObject))
+        //        StopAttack("Right");
+        //    else
+        //        StopAttack("Left");
+        //}
+        if(isRelease && !invokeFlag)
         {
-            if (FaceWhere.isFaceRight(this.gameObject.transform.parent.gameObject))
-                StopAttack("Right");
-            else
-                StopAttack("Left");
-        }
-        if(isRelease)
-        {
-            Invoke("NextCD", cd);
-            isRelease = false;
+            invokeFlag = true;
+            Invoke("NextCD", cd); 
         }
     }
     IEnumerator Attack(string dir)
     {
+        
         if (dir == "Right")
         {
             while (deltaX < attackRange)
@@ -92,5 +95,12 @@ public class FishBubble : MonoBehaviour
         if (coroutine != null)
             StopCoroutine(coroutine);
         this.gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
+        isRelease = false;
+        invokeFlag = false;
+
+        if (FaceWhere.isFaceRight(this.gameObject.transform.parent.gameObject))
+            StopAttack("Right");
+        else
+            StopAttack("Left");
     }
 }

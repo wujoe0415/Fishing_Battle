@@ -77,7 +77,7 @@ public class RandomAttack : MonoBehaviour
     
     void EnemyAttack()
     {
-        Debug.Log("attacking");
+        //Debug.Log("attacking");
         //Animation
         a_animator.SetTrigger("Attack");
         //Audio
