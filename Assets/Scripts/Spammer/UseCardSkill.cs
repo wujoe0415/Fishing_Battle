@@ -77,6 +77,13 @@ public class UseCardSkill : MonoBehaviour
 
         ArrangeOriginCard();
     }
+    private void GetSuffer()
+    {
+        if (this.gameObject.tag == "EnemyBar")
+            Suffer = GameObject.Find("PlayerCardEffect").transform;
+        else if (this.gameObject.tag == "PlayerBar")
+            Suffer = GameObject.Find("EnemyCardEffect").transform;
+    }
     private void ArrangeOriginCard()
     {
         for (int i = 0; i < this.transform.childCount; i++)
@@ -86,6 +93,7 @@ public class UseCardSkill : MonoBehaviour
     }
     public void ReArrange()
     {
+        GetSuffer();
         for (int i = 0; i < Suffer.childCount; i++)
         {
             Suffer.GetChild(i).transform.position = new Vector3(0 + gapNumber * 2.5f, 0f, 0f);
@@ -99,13 +107,6 @@ public class UseCardSkill : MonoBehaviour
     private void KickCard(int index)
     {
         usableCards.RemoveAt(index);
-    }
-    private void GetSuffer()
-    {
-        if (this.gameObject.tag == "EnemyBar")
-            Suffer = GameObject.Find("PlayerCardEffect").transform;
-        else if (this.gameObject.tag == "PlayerBar")
-            Suffer = GameObject.Find("EnemyCardEffect").transform;
     }
     public void ResetAllFlags()
     {
