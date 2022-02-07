@@ -78,10 +78,10 @@ public class FishingRodAttack : MonoBehaviour
         if(isHitEnemy())
         {
             canAttack = false;
-            if (RandomAttack.enemyHasShield)
+            if (EnemyDefense.enemyHasShield)
             {
                 enemyGetHurt.SufferDamage(PlayerData.atk - EnemyData.def);
-                RandomAttack.enemyHasShield = false;
+                EnemyDefense.enemyHasShield = false;
             }
             else
                 enemyGetHurt.SufferDamage(PlayerData.atk - EnemyData.def);

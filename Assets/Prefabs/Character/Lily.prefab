@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 6184868137883538516}
   - component: {fileID: 6184868137883538519}
   - component: {fileID: 1777432096217528655}
+  - component: {fileID: 729045551}
   m_Layer: 9
   m_Name: Lily
   m_TagString: Enemy
@@ -284,7 +285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484939c4eeb3e174a9de9b13bb9e9d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defensePersentage: 0.3
   attackCycle: 1.7
   maxTimeGap: 2
   playerSuffer: {fileID: 0}
@@ -293,11 +293,10 @@ MonoBehaviour:
   attackPoint: {fileID: 6184868137630948504}
   rightAttackpoint: {x: 4.52, y: 0.29, z: 0}
   playerPosition: {fileID: 0}
+  attackFrame: 0.26
   shield: {fileID: 6184868137532684523}
   audioSource: {fileID: 6184868137883538519}
   attackClip: {fileID: 8300000, guid: 7946f5f15f3264a48af063633cf72101, type: 3}
-  attackFrame: 0.26
-  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
   volume: 0.5
 --- !u!114 &6184868137883538516
 MonoBehaviour:
@@ -436,3 +435,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &729045551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184868137883538524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabb08b305b87b84eac6900d37169e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Self: {fileID: 6184868137883538523}
+  defensePersentage: 0.5
+  normalDEF: 40
+  defenseDEF: 60
+  delayAudio: 0.05
+  shield: {fileID: 6184868137532684523}
+  audioSource: {fileID: 6184868137883538519}
+  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
+  volume: 0.5

@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 2303952730986020335}
   - component: {fileID: 2303952730986020334}
   - component: {fileID: -6495860130698129133}
+  - component: {fileID: 464753613}
   m_Layer: 9
   m_Name: Fish
   m_TagString: Enemy
@@ -193,7 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484939c4eeb3e174a9de9b13bb9e9d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defensePersentage: 0
   attackCycle: 1
   maxTimeGap: 10
   playerSuffer: {fileID: 0}
@@ -202,11 +202,10 @@ MonoBehaviour:
   attackPoint: {fileID: 2303952730256864711}
   rightAttackpoint: {x: 5.28, y: 0.21, z: 0}
   playerPosition: {fileID: 0}
+  attackFrame: 0
   shield: {fileID: 2303952731618963398}
   audioSource: {fileID: 2303952730986020335}
   attackClip: {fileID: 8300000, guid: f3663784b03b7e44bad7d5236b0d8c3d, type: 3}
-  attackFrame: 0
-  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
   volume: 0.2
 --- !u!114 &2303952730986020328
 MonoBehaviour:
@@ -364,6 +363,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &464753613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303952730986020332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabb08b305b87b84eac6900d37169e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Self: {fileID: 2303952730986020331}
+  defensePersentage: 0
+  delayAudio: 0.05
+  shield: {fileID: 2303952731618963398}
+  audioSource: {fileID: 2303952730986020335}
+  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
+  volume: 0.5
 --- !u!1 &2303952731618963398
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2303952731618963398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.093333006, y: -0.5464568, z: 0}
+  m_LocalPosition: {x: -0.19, y: 0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2303952730986020333}

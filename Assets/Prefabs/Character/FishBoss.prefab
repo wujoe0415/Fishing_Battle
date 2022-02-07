@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 2303952730986020334}
   - component: {fileID: -6495860130698129133}
   - component: {fileID: 903411601}
+  - component: {fileID: 283635134}
   m_Layer: 9
   m_Name: FishBoss
   m_TagString: Enemy
@@ -263,8 +264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 400
-  atk: 10
-  def: 0
+  atk: 30
+  def: 20
 --- !u!114 &2303952730986020330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484939c4eeb3e174a9de9b13bb9e9d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defensePersentage: 0
   attackCycle: 1
   maxTimeGap: 5
   playerSuffer: {fileID: 0}
@@ -308,7 +308,6 @@ MonoBehaviour:
   shield: {fileID: 2303952731618963398}
   audioSource: {fileID: 2303952730986020335}
   attackClip: {fileID: 8300000, guid: f3663784b03b7e44bad7d5236b0d8c3d, type: 3}
-  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
   volume: 0.2
 --- !u!114 &2303952730986020328
 MonoBehaviour:
@@ -484,6 +483,27 @@ MonoBehaviour:
   rightX: 8.75
   speed: 10
   skillCD: 10
+--- !u!114 &283635134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303952730986020332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabb08b305b87b84eac6900d37169e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Self: {fileID: 2303952730986020331}
+  defensePersentage: 0.9
+  normalDEF: 20
+  defenseDEF: 40
+  delayAudio: 0.05
+  shield: {fileID: 2303952731618963398}
+  audioSource: {fileID: 2303952730986020335}
+  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
+  volume: 0.5
 --- !u!1 &2303952731618963398
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5238014451532138094}
   - component: {fileID: 5238014451532138092}
   - component: {fileID: 2616807000648428011}
+  - component: {fileID: 223826343}
   m_Layer: 9
   m_Name: RedLeaf
   m_TagString: Enemy
@@ -153,7 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484939c4eeb3e174a9de9b13bb9e9d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defensePersentage: 0.5
   attackCycle: 1.4
   maxTimeGap: 1.5
   playerSuffer: {fileID: 0}
@@ -162,11 +162,10 @@ MonoBehaviour:
   attackPoint: {fileID: 5238014451660612984}
   rightAttackpoint: {x: 4.78, y: -0.63, z: 0}
   playerPosition: {fileID: 0}
+  attackFrame: 0.55
   shield: {fileID: 5238014451992498026}
   audioSource: {fileID: 5238014451532138092}
   attackClip: {fileID: 8300000, guid: bce5ce25961f6af42b41e6e55f9031e0, type: 3}
-  attackFrame: 0.55
-  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
   volume: 0.5
 --- !u!114 &5238014451532138091
 MonoBehaviour:
@@ -324,6 +323,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &223826343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238014451532138069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabb08b305b87b84eac6900d37169e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Self: {fileID: 5238014451532138088}
+  defensePersentage: 0.65
+  normalDEF: 65
+  defenseDEF: 80
+  delayAudio: 0.05
+  shield: {fileID: 5238014451992498026}
+  audioSource: {fileID: 5238014451532138092}
+  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
+  volume: 0.5
 --- !u!1 &5238014451660612985
 GameObject:
   m_ObjectHideFlags: 0

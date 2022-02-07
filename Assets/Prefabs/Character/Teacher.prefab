@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 7523755558025598127}
   - component: {fileID: 7523755558025598033}
   - component: {fileID: -742181638117303187}
+  - component: {fileID: 1709539469}
   m_Layer: 9
   m_Name: Teacher
   m_TagString: Enemy
@@ -183,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484939c4eeb3e174a9de9b13bb9e9d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defensePersentage: 0.7
   attackCycle: 1.2
   maxTimeGap: 1.2
   playerSuffer: {fileID: 0}
@@ -192,11 +192,10 @@ MonoBehaviour:
   attackPoint: {fileID: 7523755557213862999}
   rightAttackpoint: {x: 5.28, y: 0.21, z: 0}
   playerPosition: {fileID: 0}
+  attackFrame: 0.38
   shield: {fileID: 7523755558299399185}
   audioSource: {fileID: 7523755558025598033}
   attackClip: {fileID: 8300000, guid: f1949505fb3f8a6489ffce4ce19e4bf1, type: 3}
-  attackFrame: 0.38
-  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
   volume: 0.2
 --- !u!114 &7523755558025598122
 MonoBehaviour:
@@ -354,6 +353,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &1709539469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7523755558025598120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabb08b305b87b84eac6900d37169e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Self: {fileID: 7523755558025598125}
+  defensePersentage: 0.8
+  normalDEF: 100
+  defenseDEF: 150
+  delayAudio: 0.05
+  shield: {fileID: 7523755558299399185}
+  audioSource: {fileID: 7523755558025598033}
+  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
+  volume: 0.5
 --- !u!1 &7523755558299399185
 GameObject:
   m_ObjectHideFlags: 0
