@@ -98,4 +98,4 @@ MonoBehaviour:
   EnemyData: {fileID: 0}
   playerSuffer: {fileID: 0}
   buffAttack: 50
-  shootDamage: 150
+  shootDamage: 0

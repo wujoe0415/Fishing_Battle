@@ -9,10 +9,6 @@ public class EnemyStatus : MonoBehaviour
     public static void addEnemySkill(GameObject reference)
     {
         enemysuffer.Add(reference);
-        foreach(GameObject status in enemysuffer)
-        {
-            Debug.Log("enemysuffer have :" + status.name);
-        }
     }
     public static void offsetEnemySkill(GameObject offset)
     {
@@ -24,17 +20,16 @@ public class EnemyStatus : MonoBehaviour
     }
     public static void ClearAllEnemyStatus()
     {
-        UseCardSkill usecardskill = GameObject.Find("EnemyCardCollector").GetComponent<UseCardSkill>();
+        UseCardSkill usecardskill = GameObject.Find("PlayerCardCollector").GetComponent<UseCardSkill>();
         usecardskill.ResetAllFlags();
-
         foreach (GameObject skill in enemysuffer)
         {
-            Debug.Log(skill.name);
             Destroy(GameObject.Find(skill.name));
         }
         enemysuffer.Clear();
         usecardskill.ReArrange();
     }
+    
     //public static void UnAvailSkill(GameObject avail)
     //{
     //    UseCardSkill usecardskill = GameObject.Find("EnemyCardCollector").GetComponent<UseCardSkill>();
@@ -47,6 +42,7 @@ public class EnemyStatus : MonoBehaviour
         {
             if (a.name == name)
             {
+                Debug.Log("enemysuffer remove "+ name);
                 enemysuffer.Remove(a);
                 return true;
             }

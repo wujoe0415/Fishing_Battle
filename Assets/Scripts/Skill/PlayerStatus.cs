@@ -9,9 +9,6 @@ public class PlayerStatus : MonoBehaviour
     public static void addPlayerSkill(GameObject reference)
     {
         playersuffer.Add(reference);
-        foreach (GameObject status in playersuffer)
-            Debug.Log("playersuffer have :" + status.name);
-        
     }
     public static void offsetPlayerSkill(GameObject offset)
     {
@@ -23,17 +20,23 @@ public class PlayerStatus : MonoBehaviour
     }
     public static void ClearAllPlayerStatus()
     {
-        UseCardSkill usecardskill = GameObject.Find("PlayerCardCollector").GetComponent<UseCardSkill>();
+        UseCardSkill usecardskill = GameObject.Find("EnemyCardCollector").GetComponent<UseCardSkill>();
         usecardskill.ResetAllFlags();
-
+        Debug.Log(playersuffer.Count);
         foreach (GameObject skill in playersuffer)
         {
             Debug.Log(skill.name);
+            //Destroy(GameObject.Find(skill.name));
+        }
+        foreach (GameObject skill in playersuffer)
+        {
+            //Debug.Log(skill.name);
             Destroy(GameObject.Find(skill.name));
         }
         playersuffer.Clear();
         usecardskill.ReArrange();
     }
+    
     public static void UnAvailSkill(GameObject avail)
     {
         UseCardSkill usecardskill = GameObject.Find("PlayerCardCollector").GetComponent<UseCardSkill>();

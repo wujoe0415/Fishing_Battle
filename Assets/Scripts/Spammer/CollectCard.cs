@@ -7,12 +7,13 @@ public class CollectCard : MonoBehaviour
     public GameObject cardSprite;
     Transform PlayerCardCollector;
     Transform EnemyCardCollector;
+    private int maxCollectCardNum = 4;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag== "Player")
         {
             PlayerCardCollector = GameObject.Find("PlayerCardCollector").GetComponent<Transform>();
-            if (PlayerCardCollector.childCount < 5)
+            if (PlayerCardCollector.childCount < maxCollectCardNum)
             {
                 GameObject cardReference = Instantiate(cardSprite) as GameObject;
                 cardReference.gameObject.transform.SetParent(PlayerCardCollector);
@@ -23,7 +24,7 @@ public class CollectCard : MonoBehaviour
         else if(collision.gameObject.tag == "Enemy")
         {
             EnemyCardCollector = GameObject.Find("EnemyCardCollector").GetComponent<Transform>();
-            if (EnemyCardCollector.childCount < 5)
+            if (EnemyCardCollector.childCount < maxCollectCardNum)
             {
                 GameObject cardReference = Instantiate(cardSprite) as GameObject;
                 cardReference.gameObject.transform.SetParent(EnemyCardCollector);

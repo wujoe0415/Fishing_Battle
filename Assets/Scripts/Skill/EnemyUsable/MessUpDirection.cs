@@ -19,7 +19,7 @@ public class MessUpDirection : MonoBehaviour
     }
     private void Check()
     {
-        if (EnemyStatus.Checkexist("CanBeHorny" + "(Clone)"))
+        if (EnemyStatus.Checkexist("INeedToBeHorny" + "(Clone)"))
         {
             GameObject temp;
             temp = GameObject.Find("INeedToBeHorny" + "(Clone)").gameObject;
