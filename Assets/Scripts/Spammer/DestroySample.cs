@@ -12,7 +12,7 @@ public class DestroySample : MonoBehaviour
 
     IEnumerator Fade()
     {
-        for (float ft = 1f; ft >= 0; ft -= 0.001f)
+        for (float ft = 1f; ft >= 0; ft -= 0.005f)
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,ft);
             yield return null;
