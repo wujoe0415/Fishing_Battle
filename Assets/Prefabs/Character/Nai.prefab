@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Self: {fileID: 7483046275373265565}
-  defensePersentage: 0
+  defensePersentage: 0.27
   normalDEF: 40
   defenseDEF: 50
   delayAudio: 0.05

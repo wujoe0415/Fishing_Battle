@@ -53,7 +53,8 @@ public class EnemyDefense : MonoBehaviour
     }
     void EnemyDef()
     {
-        Invoke("DEFDelay", delayAudio);
+        if(FishingRodAttack.attackHitEnemy)
+            Invoke("DEFDelay", delayAudio);
         shield.SetActive(true);
         Self.def = defenseDEF;
     }
@@ -62,7 +63,7 @@ public class EnemyDefense : MonoBehaviour
         shield.SetActive(false);
         Self.def = normalDEF;
     }
-    void DEFDelay()
+    public void DEFDelay()
     {
         //Animation
         a_animator.SetTrigger("SufferAttack");

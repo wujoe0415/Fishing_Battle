@@ -18,15 +18,13 @@ public class FishingRodAttack : MonoBehaviour
     public Transform attackPoint;
     public Vector3 anotherAttackPoint;
     public float attackFrequency;
-    public GameObject shield;
     private float timer = 0.0f;
     public bool canAttack = true;
-    
+    public static bool attackHitEnemy = false;
     
     [Header("Audio Clip")]
     public AudioSource audioSource;
     public AudioClip attackClip;
-    public AudioClip defendClip;
     public float volume = 0.5f;
     
     void Start()
@@ -44,20 +42,8 @@ public class FishingRodAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PauseGame.isPause && canAttack && Input.GetKeyDown(KeyCode.A))
+        if (!PauseGame.isPause && canAttack && Input.GetKeyDown(KeyCode.A) && currentEnemy != null)
             Attack();
-        
-        if (!PauseGame.isPause && Input.GetKeyDown(KeyCode.D))
-        {
-            Defense();
-        }
-        if (!PauseGame.isPause && Input.GetKeyUp(KeyCode.D))
-        {
-            if (shield.activeInHierarchy)
-            {
-                UnDefense();
-            }
-        }
 
         timer += Time.deltaTime;
 
@@ -74,7 +60,6 @@ public class FishingRodAttack : MonoBehaviour
         playerAnimator.SetTrigger("Attack");
         //Audio
         audioSource.PlayOneShot(attackClip, volume);
-
         if(isHitEnemy())
         {
             canAttack = false;
@@ -90,21 +75,13 @@ public class FishingRodAttack : MonoBehaviour
     }
     private bool isHitEnemy()
     {
-        if (FaceWhere.isFaceRight(this.gameObject)&&currentEnemy.transform.position.x >= transform.position.x && attackPoint.position.x > currentEnemy.transform.position.x)
+        if (FaceWhere.isFaceRight(this.gameObject) && currentEnemy.transform.position.x >= transform.position.x && attackPoint.position.x > currentEnemy.transform.position.x ||
+            !FaceWhere.isFaceRight(this.gameObject) && currentEnemy.transform.position.x < transform.position.x && anotherAttackPoint.x < currentEnemy.transform.position.x)
+        {
+            attackHitEnemy = true;
             return true;
-        else if (!FaceWhere.isFaceRight(this.gameObject) && currentEnemy.transform.position.x < transform.position.x && anotherAttackPoint.x < currentEnemy.transform.position.x)
-            return true;
-        else
-            return false;
-    }
-    void Defense()
-    {
-        shield.SetActive(true);
-        PlayerData.def += 5;
-    }
-    void UnDefense()
-    {
-        shield.SetActive(false);
-        PlayerData.def -= 5;
+        }
+        attackHitEnemy = false;
+        return false;
     }
 }

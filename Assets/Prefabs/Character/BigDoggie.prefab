@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 1651856108393704699}
   - component: {fileID: 1651856108393704698}
   - component: {fileID: 1920150698694251702}
+  - component: {fileID: 1311241728}
   m_Layer: 7
   m_Name: BigDoggie
   m_TagString: Player
@@ -240,11 +241,9 @@ MonoBehaviour:
   attackPoint: {fileID: 1651856107986098954}
   anotherAttackPoint: {x: -4.56, y: -0.23, z: 0}
   attackFrequency: 1
-  shield: {fileID: 1651856108592312663}
   canAttack: 1
   audioSource: {fileID: 1651856108393704698}
   attackClip: {fileID: 8300000, guid: 52888d985a995f24badaa633fb897e26, type: 3}
-  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
   volume: 0.3
 --- !u!95 &1651856108393704699
 Animator:
@@ -382,6 +381,21 @@ MonoBehaviour:
   enemy: {fileID: 0}
   enemyGetHurt: {fileID: 0}
   judge: {fileID: 0}
+--- !u!114 &1311241728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651856108393704672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74a4beef37fd0f4c8148dbb64bc83a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 1651856108393704696}
+  shield: {fileID: 1651856108592312663}
+  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
 --- !u!1 &1651856108592312663
 GameObject:
   m_ObjectHideFlags: 0
