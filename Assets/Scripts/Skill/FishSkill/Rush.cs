@@ -120,7 +120,6 @@ public class Rush : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision " + collision.gameObject.name);
         if(collision.gameObject.tag == "Player" && !wander.enabled)
         {
             audioSource.PlayOneShot(collisionSound, volume);

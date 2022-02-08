@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DestroySample : MonoBehaviour
 {
+    SpriteRenderer spriteRender;
     // Start is called before the first frame update
     void Start()
     {
+        spriteRender = this.gameObject.GetComponent<SpriteRenderer>();
         StartCoroutine(Fade());
     }
 
@@ -14,7 +16,7 @@ public class DestroySample : MonoBehaviour
     {
         for (float ft = 1f; ft >= 0; ft -= 0.005f)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,ft);
+            spriteRender.color = new Color(1f,1f,1f,ft);
             yield return null;
         }
 

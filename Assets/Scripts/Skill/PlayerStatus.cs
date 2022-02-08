@@ -25,11 +25,6 @@ public class PlayerStatus : MonoBehaviour
         Debug.Log(playersuffer.Count);
         foreach (GameObject skill in playersuffer)
         {
-            Debug.Log(skill.name);
-            //Destroy(GameObject.Find(skill.name));
-        }
-        foreach (GameObject skill in playersuffer)
-        {
             //Debug.Log(skill.name);
             Destroy(GameObject.Find(skill.name));
         }

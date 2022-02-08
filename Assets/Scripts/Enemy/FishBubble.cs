@@ -8,31 +8,36 @@ public class FishBubble : MonoBehaviour
     public float attackRange = 0f;
     [Range(0.0f, 10f)]
     public float originGap = 0f;
-    [Range(0.0f,1f)]
+    [Range(0.0f,1000f)]
     public float speed = 100f;
     [Range(1.0f,1.02f)]
     public float sizeGrowRate = 1.01f;
     [Range(0.0f, 5.0f)]
     public float cd = 1.0f;
-    private float deltaX = 0f;
-    
-    IEnumerator coroutine;
+    [Range(0f, 100f)]
+    public float force; 
+
+    private SpriteRenderer fishBossSprite;
+    private Rigidbody2D fishBossRigid;
     bool isRelease = false;
     bool invokeFlag = false;
-    
+
+    private void Start()
+    {
+        fishBossSprite = this.gameObject.GetComponent<SpriteRenderer>();
+        fishBossRigid = this.gameObject.GetComponent<Rigidbody2D>();
+    }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (RandomAttack.isAttacking && !isRelease)
         {
             Debug.Log("in Attack");
             isRelease = true;
             if (FaceWhere.isFaceRight(this.gameObject.transform.parent.gameObject))
-                coroutine = Attack("Right");
+                Attack("Right");
             else
-                coroutine = Attack("Left");
-
-            StartCoroutine(coroutine);
+                Attack("Left");
         }
         //else if(!RandomAttack.isAttacking && isRelease)
         //{
@@ -47,54 +52,23 @@ public class FishBubble : MonoBehaviour
             Invoke("NextCD", cd); 
         }
     }
-    IEnumerator Attack(string dir)
+    void Attack(string dir)
     {
-        
         if (dir == "Right")
-        {
-            while (deltaX < attackRange)
-            {
-                deltaX += Time.deltaTime * speed;
-                this.gameObject.transform.position += Vector3.right * Time.deltaTime * speed;
-                if (this.gameObject.transform.localScale.x < 1)
-                    this.gameObject.transform.localScale *= sizeGrowRate;
-                Debug.Log("attack Right " + this.gameObject.transform.position);
-                yield return null;
-            }
-        }
+            fishBossRigid.AddForce(transform.right * force, ForceMode2D.Impulse);
         else if(dir == "Left")
-        {
-            while (deltaX < attackRange)
-            {
-                deltaX += Time.deltaTime * speed;
-                this.gameObject.transform.position += Vector3.left * Time.deltaTime * speed;
-                if (this.gameObject.transform.localScale.x < 1)
-                    this.gameObject.transform.localScale *= sizeGrowRate;
-                Debug.Log("attack Left "+ this.gameObject.transform.position);
-                yield return null;
-            }
-        }
-        yield return null;
+            fishBossRigid.AddForce(-1 * transform.right * force, ForceMode2D.Impulse);
     }
     void StopAttack(string dir)
     {
         Debug.Log("Stop");
-        deltaX = 0f;
-        if (coroutine != null)
-            StopCoroutine(coroutine);
         if (dir == "Right")
             this.gameObject.transform.position = this.gameObject.transform.parent.position + new Vector3(originGap, 0, 0);
         else if (dir == "Left")
             this.gameObject.transform.position = this.gameObject.transform.parent.position - new Vector3(originGap, 0, 0);
-        this.gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
-        
     }
-
     void NextCD()
     {
-        if (coroutine != null)
-            StopCoroutine(coroutine);
-        this.gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         isRelease = false;
         invokeFlag = false;
 

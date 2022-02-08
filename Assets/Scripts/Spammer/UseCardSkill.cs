@@ -7,6 +7,7 @@ public class UseCardSkill : MonoBehaviour
 
     public List<GameObject> usableCardsSamples = new List<GameObject>();
     public List<GameObject> usableCards = new List<GameObject>();
+    GameObject randomCard;
     public bool[] flag;
     public Transform Suffer;
     private int index = 0;
@@ -40,7 +41,6 @@ public class UseCardSkill : MonoBehaviour
         Destroy(this.gameObject.transform.GetChild(0).gameObject);
         // reduce 3 with 1 skill
         //Instantiate Card and Sample
-        GameObject randomCard;
         while(isThereRemainingSkill())
         {
             index = Random.Range(0, usableCards.Count);
@@ -145,7 +145,7 @@ public class UseCardSkill : MonoBehaviour
     }
     private bool isThereRemainingSkill()
     {
-        for(int i = 0;i < flag.Length;i++)
+        for(int i = 0;i < flag.Length ; i++)
         {
             if (!flag[i])
                 return true;
