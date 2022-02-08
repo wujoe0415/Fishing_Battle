@@ -37,7 +37,7 @@ public class UseCardSkill : MonoBehaviour
             else if (this.gameObject.name == "EnemyCardCollector" && BattleInitiation.currentPlayer != null)
             {
                 Debug.Log("inEnemy");
-                //UseCard();
+                UseCard();
             }
         }
     }
@@ -49,8 +49,14 @@ public class UseCardSkill : MonoBehaviour
         Destroy(this.gameObject.transform.GetChild(0).gameObject);
         // reduce 3 with 1 skill
         //Instantiate Card and Sample
+        int loopAvoid = 0;
         while (isThereRemainingSkill())
         {
+            if(loopAvoid == 100)
+            {
+                Debug.LogWarning("Detect infinite loop!");
+            }
+            loopAvoid += 1;
             Debug.Log("loopInRemainingSkill");
             index = Random.Range(0, usableCards.Count);
             if (this.gameObject.name == "PlayerCardCollector" && !flag[index])
@@ -64,8 +70,7 @@ public class UseCardSkill : MonoBehaviour
                 break;
             }
         }
-
-        index = Random.Range(0, usableCards.Count);
+        
         randomCard = Instantiate(usableCards[index]) as GameObject;
         foreach (GameObject sample in usableCardsSamples)
         {
