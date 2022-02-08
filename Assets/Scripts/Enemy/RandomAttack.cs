@@ -15,8 +15,8 @@ public class RandomAttack : MonoBehaviour
     private GameObject PlayerData;
     
     [Header("Detect suffering")]
-    public Transform attackPoint;
-    public Vector3 rightAttackpoint;
+    public Transform attackPointL;
+    public Transform attackPointR;
     public Transform playerPosition;
     public static bool isAttacking = false;
     public float attackFrame;
@@ -37,6 +37,7 @@ public class RandomAttack : MonoBehaviour
         PlayerData = GameObject.FindGameObjectWithTag("Player");
         playerSuffer = PlayerData.GetComponent<GetHurt>();
         Player = PlayerData.GetComponent<GeneralHuman>();
+        Self = GetComponent<GeneralHuman>();
         playerPosition = PlayerData.GetComponent<Transform>();
 
         a_animator = GetComponent<Animator>();
@@ -53,7 +54,6 @@ public class RandomAttack : MonoBehaviour
         }
         else
             timer += Time.deltaTime;
-
     }
     
     void EnemyAttack()
@@ -72,17 +72,20 @@ public class RandomAttack : MonoBehaviour
             playerSuffer.SufferDamage(Self.atk - Player.def);
             // Recovery
             attackCycle = Random.Range(0.5f, maxTimeGap);
-            
         }
         timer = 0f;
         
     }
     private bool ishitPlayer()
     {
-        if (!FaceWhere.isFaceRight(this.gameObject) && playerPosition.position.x <= transform.position.x && attackPoint.position.x < playerPosition.position.x /*&& a_spriteRenderer.flipX == false*/)
+        Debug.Log("attackPointL.position.x : " + attackPointL.position.x);
+        Debug.Log("attackPointR.position.x : " + attackPointR.position.x);
+
+        if (!FaceWhere.isFaceRight(this.gameObject) && playerPosition.position.x <= transform.position.x && attackPointL.position.x < playerPosition.position.x /*&& a_spriteRenderer.flipX == false*/)
             return true;
-        else if (FaceWhere.isFaceRight(this.gameObject) && playerPosition.position.x >= transform.position.x && rightAttackpoint.x > playerPosition.position.x/* && a_spriteRenderer.flipX == true */)
+        else if (FaceWhere.isFaceRight(this.gameObject) && playerPosition.position.x >= transform.position.x && attackPointR.position.x > playerPosition.position.x/* && a_spriteRenderer.flipX == true */)
             return true;
+        
         else
             return false;
     }

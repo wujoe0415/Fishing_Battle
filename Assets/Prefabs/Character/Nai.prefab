@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &29984780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 29984781}
+  m_Layer: 9
+  m_Name: NaiPointR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &29984781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29984780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.55, y: -1.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7483046275373265562}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7483046274764118017
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7483046274764118016}
   m_Layer: 9
-  m_Name: NaiPoint
+  m_Name: NaiPointL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +89,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7483046275373265562}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7483046274932230215
 SpriteRenderer:
@@ -150,6 +180,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7483046274764118016}
+  - {fileID: 29984781}
   - {fileID: 7483046274932230208}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -271,8 +302,8 @@ MonoBehaviour:
   playerSuffer: {fileID: 0}
   Self: {fileID: 7483046275373265565}
   Player: {fileID: 0}
-  attackPoint: {fileID: 7483046274764118016}
-  rightAttackpoint: {x: 4.55, y: -1.16, z: 0}
+  attackPointL: {fileID: 7483046274764118016}
+  attackPointR: {fileID: 29984781}
   playerPosition: {fileID: 0}
   attackFrame: 0.51
   shield: {fileID: 7483046274932230209}

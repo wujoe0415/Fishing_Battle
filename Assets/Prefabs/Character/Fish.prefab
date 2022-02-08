@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1486840701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1486840702}
+  m_Layer: 9
+  m_Name: FishPointL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1486840702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486840701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.28, y: 0.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2303952730986020333}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2303952730256864710
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2303952730256864711}
   m_Layer: 9
-  m_Name: TeacherPoint
+  m_Name: FishPointR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,11 +54,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2303952730256864710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.28, y: 0.21, z: 0}
+  m_LocalPosition: {x: 5.28, y: 0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2303952730986020333}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2303952730986020332
 GameObject:
@@ -67,6 +97,7 @@ Transform:
   m_LocalPosition: {x: 3.29, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1486840702}
   - {fileID: 2303952730256864711}
   - {fileID: 2303952731618963399}
   m_Father: {fileID: 0}
@@ -199,8 +230,8 @@ MonoBehaviour:
   playerSuffer: {fileID: 0}
   Self: {fileID: 2303952730986020331}
   Player: {fileID: 0}
-  attackPoint: {fileID: 2303952730256864711}
-  rightAttackpoint: {x: 5.28, y: 0.21, z: 0}
+  attackPointL: {fileID: 0}
+  attackPointR: {fileID: 0}
   playerPosition: {fileID: 0}
   attackFrame: 0
   shield: {fileID: 2303952731618963398}
@@ -377,6 +408,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Self: {fileID: 2303952730986020331}
   defensePersentage: 0
+  normalDEF: 0
+  defenseDEF: 0
   delayAudio: 0.05
   shield: {fileID: 2303952731618963398}
   audioSource: {fileID: 2303952730986020335}
@@ -411,7 +444,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2303952730986020333}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2303952731618963392
 SpriteRenderer:

@@ -11,10 +11,11 @@ public class Silent : MonoBehaviour
     public GameObject SilentCanvas;
     public AudioSource BGM;
     public GeneralHuman BigDoggie;
-    public GameObject enemy;
     public GetHurt enemyGetHurt;
     public Judge judge;
     public static bool useSilentSkill = false;
+    [Range(1,400)]
+    public int minHp = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +26,9 @@ public class Silent : MonoBehaviour
         judge = GameObject.Find("Judge").GetComponent<Judge>();
         BattleCanvas = GameObject.Find("BattleCanvas");
         SilentCanvas = GameObject.Find("SkillCanvas");
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        enemyGetHurt = GameObject.FindGameObjectWithTag("Enemy").GetComponent<GetHurt>();
+        enemyGetHurt = BattleInitiation.currentEnemy.GetComponent<GetHurt>();
         BigDoggie = GetComponent<GeneralHuman>();
+        SilentCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,12 +36,14 @@ public class Silent : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            if ((enemy.name == "RedLeaf" || enemy.name == "Teacher") && GameObject.FindGameObjectWithTag("Player") != null && BigDoggie.hp < 100 )
+            if ( BigDoggie.hp < minHp && (BattleInitiation.currentEnemy.name == "RedLeaf" || BattleInitiation.currentEnemy.name == "Teacher") && BattleInitiation.currentPlayer != null )
             {
+                enemyGetHurt = BattleInitiation.currentEnemy.GetComponent<GetHurt>();
+                enemyGetHurt.SufferSkill(400);
                 BattleArena.SetActive(false);
                 BGM.Stop();
+                SilentCanvas.SetActive(true);
                 useSilentSkill = true;
-                enemyGetHurt.SufferSkill(100);
                 
                 BattleCanvas.SetActive(false);
                 video.enabled = true;
@@ -52,9 +55,10 @@ public class Silent : MonoBehaviour
     void TurnOffVideo()
     {
         BattleArena.SetActive(true);
+        BattleCanvas.SetActive(true);
         video.Stop();
         video.enabled = false;
-        BattleCanvas.SetActive(true);
+        SilentCanvas.SetActive(false);
         judge.JudgeWinorLose("Enemy");
     }
 }

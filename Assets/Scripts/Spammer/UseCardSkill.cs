@@ -22,15 +22,21 @@ public class UseCardSkill : MonoBehaviour
     }
     private void Update()
     {
-        if (this.gameObject.tag == "PlayerBar")
+        if (this.gameObject.name == "PlayerCardCollector")
         {
-            if (!PauseGame.isPause && Input.GetKey(KeyCode.C) && this.gameObject.transform.childCount >= 3 && isThereRemainingSkill())
+            if (!PauseGame.isPause && Input.GetKey(KeyCode.C) && this.gameObject.transform.childCount >= 3 && isThereRemainingSkill() && BattleInitiation.currentEnemy != null)
+            {
+                Debug.Log("inPlayer");
                 UseCard();
+            }
         }
-        else if(this.gameObject.tag == "EnemyBar")
+        else if (this.gameObject.name == "EnemyCardCollector")
         {
-            if (!PauseGame.isPause && this.gameObject.transform.childCount >= 3 && isThereRemainingSkill())
+            if (!PauseGame.isPause && this.gameObject.transform.childCount >= 3 && isThereRemainingSkill() && BattleInitiation.currentPlayer != null)
+            {
+                Debug.Log("inEnemy");
                 UseCard();
+            }
         }
     }
 
@@ -43,6 +49,7 @@ public class UseCardSkill : MonoBehaviour
         //Instantiate Card and Sample
         while(isThereRemainingSkill())
         {
+            Debug.Log("loopInRemainingSkill");
             index = Random.Range(0, usableCards.Count);
             if (this.gameObject.tag == "EnemyBar" && !flag[index]) 
             {
@@ -59,7 +66,8 @@ public class UseCardSkill : MonoBehaviour
         randomCard = Instantiate(usableCards[index]) as GameObject;
         foreach (GameObject sample in usableCardsSamples)
         {
-            if(usableCards[index].gameObject.name + "Example" == sample.name )
+            Debug.Log("loopInUsableCard");
+            if (usableCards[index].gameObject.name + "Example" == sample.name )
                 Instantiate(sample);
         }
         GetSuffer();

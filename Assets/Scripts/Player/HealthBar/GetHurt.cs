@@ -24,6 +24,7 @@ public class GetHurt : MonoBehaviour
         if (this.gameObject.tag == "Enemy")
         {
             ch = GameObject.FindGameObjectWithTag("EnemyBarNum").GetComponent<CountHealth>();
+            Debug.Log(GameObject.FindGameObjectWithTag("EnemyBar").gameObject);
             bar = GameObject.FindGameObjectWithTag("EnemyBar").GetComponent<HealthBarSlide>();
         }
         else if (this.gameObject.tag == "Player")

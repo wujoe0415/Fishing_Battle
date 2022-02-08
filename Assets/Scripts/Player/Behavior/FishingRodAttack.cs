@@ -62,6 +62,7 @@ public class FishingRodAttack : MonoBehaviour
         audioSource.PlayOneShot(attackClip, volume);
         if(isHitEnemy())
         {
+            enemyGetHurt = currentEnemy.GetComponent<GetHurt>();
             canAttack = false;
             if (EnemyDefense.enemyHasShield)
             {

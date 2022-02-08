@@ -11,7 +11,7 @@ public class Judge : MonoBehaviour
     public AudioSource bgm;
     public BattleInitiation init;
     private int indexFight = 0;
-
+    public float blankTime = 5f;
     void Start()
     {
         battle = GameObject.FindGameObjectWithTag("Battle");
@@ -35,13 +35,13 @@ public class Judge : MonoBehaviour
         {
             //true win
             win.SetActive(true);
-            Invoke("TurnOffWinLoseAudio", 5);
+            Invoke("TurnOffWinLoseAudio", blankTime);
         }
         else if (tag == "Enemy") // win
         {
             //temp win
             win.SetActive(true);
-            Invoke("TurnOffWinLoseAudio", 5);
+            Invoke("TurnOffWinLoseAudio", blankTime);
         }
         
     }
