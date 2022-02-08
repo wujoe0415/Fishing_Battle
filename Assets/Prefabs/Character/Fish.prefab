@@ -230,8 +230,8 @@ MonoBehaviour:
   playerSuffer: {fileID: 0}
   Self: {fileID: 2303952730986020331}
   Player: {fileID: 0}
-  attackPointL: {fileID: 0}
-  attackPointR: {fileID: 0}
+  attackPointL: {fileID: 1486840702}
+  attackPointR: {fileID: 2303952730256864711}
   playerPosition: {fileID: 0}
   attackFrame: 0
   shield: {fileID: 2303952731618963398}

@@ -22,20 +22,22 @@ public class UseCardSkill : MonoBehaviour
     }
     private void Update()
     {
-        if (this.gameObject.name == "PlayerCardCollector")
+        if (Input.GetKey(KeyCode.K))
         {
-            if (!PauseGame.isPause && Input.GetKey(KeyCode.C) && this.gameObject.transform.childCount >= 3 && isThereRemainingSkill() && BattleInitiation.currentEnemy != null)
+            Debug.Log("BattleInitiation.currentPlayer" + BattleInitiation.currentPlayer);
+            Debug.Log("BattleInitiation.currentEnemy" + BattleInitiation.currentEnemy);
+        }
+        if (this.gameObject.transform.childCount >= 3 && !PauseGame.isPause &&  isThereRemainingSkill())
+        {
+            if (Input.GetKey(KeyCode.C) /*&& this.gameObject.name == "PlayerCardCollector"*/ && BattleInitiation.currentEnemy != null)
             {
                 Debug.Log("inPlayer");
                 UseCard();
             }
-        }
-        else if (this.gameObject.name == "EnemyCardCollector")
-        {
-            if (!PauseGame.isPause && this.gameObject.transform.childCount >= 3 && isThereRemainingSkill() && BattleInitiation.currentPlayer != null)
+            else if (this.gameObject.name == "EnemyCardCollector" && BattleInitiation.currentPlayer != null)
             {
                 Debug.Log("inEnemy");
-                UseCard();
+                //UseCard();
             }
         }
     }
@@ -47,22 +49,23 @@ public class UseCardSkill : MonoBehaviour
         Destroy(this.gameObject.transform.GetChild(0).gameObject);
         // reduce 3 with 1 skill
         //Instantiate Card and Sample
-        while(isThereRemainingSkill())
+        while (isThereRemainingSkill())
         {
             Debug.Log("loopInRemainingSkill");
             index = Random.Range(0, usableCards.Count);
-            if (this.gameObject.tag == "EnemyBar" && !flag[index]) 
+            if (this.gameObject.name == "PlayerCardCollector" && !flag[index])
             {
                 flag[index] = true;
                 break;
             }
-            else if (this.gameObject.tag == "PlayerBar" && !flag[index])
+            else if (this.gameObject.name == "EnemyCardCollector" && !flag[index])
             {
                 flag[index] = true;
                 break;
             }
         }
-        
+
+        index = Random.Range(0, usableCards.Count);
         randomCard = Instantiate(usableCards[index]) as GameObject;
         foreach (GameObject sample in usableCardsSamples)
         {
@@ -76,9 +79,9 @@ public class UseCardSkill : MonoBehaviour
         ReArrange();
 
         // Allocate to PlayerStatus or EnemyStatus
-        if (this.gameObject.tag == "EnemyBar")
+        if (this.gameObject.name == "EnemyCardCollector")
             PlayerStatus.addPlayerSkill(randomCard);
-        else if (this.gameObject.tag == "PlayerBar")
+        else if (this.gameObject.name == "PlayerCardCollector")
             EnemyStatus.addEnemySkill(randomCard);
 
         //note
@@ -87,9 +90,9 @@ public class UseCardSkill : MonoBehaviour
     }
     private void GetSuffer()
     {
-        if (this.gameObject.tag == "EnemyBar")
+        if (this.gameObject.name == "EnemyCardCollector")
             Suffer = GameObject.Find("PlayerCardEffect").transform;
-        else if (this.gameObject.tag == "PlayerBar")
+        else if (this.gameObject.name == "PlayerCardCollector")
             Suffer = GameObject.Find("EnemyCardEffect").transform;
     }
     private void ArrangeOriginCard()
