@@ -265,8 +265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
-  atk: 70
-  def: 40
+  atk: 65
+  def: 50
 --- !u!114 &7483046275373265566
 MonoBehaviour:
   m_ObjectHideFlags: 0

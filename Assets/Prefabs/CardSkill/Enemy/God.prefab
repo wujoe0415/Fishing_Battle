@@ -97,4 +97,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffAtk: 100
   buffDef: 100
-  recoverHp: 50
+  recoverHp: 100

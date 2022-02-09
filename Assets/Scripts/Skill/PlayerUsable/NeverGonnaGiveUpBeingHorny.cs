@@ -6,9 +6,9 @@ public class NeverGonnaGiveUpBeingHorny : MonoBehaviour
 {
     GeneralHuman PlayerData;
     GetHurt PlayerPlus;
-    public int recoverHp = 30;
-    public int buffDef = 30;
     public int buffAtk = 30;
+    public int buffDef = 30;
+    public int recoverHp = 30;
     // Start is called before the first frame update
     void Start()
     {

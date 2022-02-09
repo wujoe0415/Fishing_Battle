@@ -30,6 +30,8 @@ public class Rush : MonoBehaviour
     [Range(10f,15f)]
     public float skillCD = 0;
     // Start is called before the first frame update
+    [Range(10,50)]
+    public int rushDamage = 20;
     void Start()
     {
         wander = this.gameObject.GetComponent<Wander>();
@@ -123,7 +125,7 @@ public class Rush : MonoBehaviour
         if(collision.gameObject.tag == "Player" && !wander.enabled)
         {
             audioSource.PlayOneShot(collisionSound, volume);
-            playerSuffer.SufferDamage(20);
+            playerSuffer.SufferDamage(rushDamage);
         }
     }
 }

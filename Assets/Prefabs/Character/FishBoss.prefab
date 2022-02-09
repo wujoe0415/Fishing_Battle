@@ -212,12 +212,12 @@ GameObject:
   - component: {fileID: 2303952730986020330}
   - component: {fileID: 2303952730986020329}
   - component: {fileID: 2303952730986020328}
+  - component: {fileID: 1014045403}
+  - component: {fileID: 283635134}
   - component: {fileID: 2303952730986020335}
   - component: {fileID: 2303952730986020334}
   - component: {fileID: -6495860130698129133}
   - component: {fileID: 903411601}
-  - component: {fileID: 283635134}
-  - component: {fileID: 1014045403}
   m_Layer: 9
   m_Name: FishBoss
   m_TagString: Enemy
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decc79d7e177c4749bc0c392f716e071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontal: 0.002
+  horizontal: 0.005
   targetPosition: {x: 0, y: 0, z: 0}
   playerPosition: {fileID: 0}
   speedAdjust: 1000
@@ -398,6 +398,44 @@ MonoBehaviour:
   timer: 0
   isStaying: 0
   isRedLeaf: 1
+--- !u!114 &1014045403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303952730986020332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e7a343cc462e942975f927eb1cc400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 4.1
+  originGap: 1.61
+  cd: 2
+  force: 13
+  bubble: {fileID: 1636633120}
+--- !u!114 &283635134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303952730986020332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabb08b305b87b84eac6900d37169e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Self: {fileID: 2303952730986020331}
+  defensePersentage: 0.9
+  normalDEF: 20
+  defenseDEF: 40
+  delayAudio: 0.05
+  shield: {fileID: 2303952731618963398}
+  audioSource: {fileID: 2303952730986020335}
+  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
+  volume: 0.5
 --- !u!82 &2303952730986020335
 AudioSource:
   m_ObjectHideFlags: 0
@@ -552,44 +590,7 @@ MonoBehaviour:
   rightX: 8.75
   speed: 10
   skillCD: 10
---- !u!114 &283635134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2303952730986020332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fabb08b305b87b84eac6900d37169e7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Self: {fileID: 2303952730986020331}
-  defensePersentage: 0.9
-  normalDEF: 20
-  defenseDEF: 40
-  delayAudio: 0.05
-  shield: {fileID: 2303952731618963398}
-  audioSource: {fileID: 2303952730986020335}
-  defendClip: {fileID: 8300000, guid: 5fb88133c976ef84a8064644fb54cbc1, type: 3}
-  volume: 0.5
---- !u!114 &1014045403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2303952730986020332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79e7a343cc462e942975f927eb1cc400, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRange: 4.1
-  originGap: 1.61
-  cd: 2
-  force: 13
-  bubble: {fileID: 1636633120}
+  rushDamage: 25
 --- !u!1 &2303952731618963398
 GameObject:
   m_ObjectHideFlags: 0

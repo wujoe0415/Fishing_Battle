@@ -95,3 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56defd7db1ce1743bbd36966a325fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffAttack: 50
+  buffDEF: 25
+  sacrificeHP: 100
+  recoverHp: 50

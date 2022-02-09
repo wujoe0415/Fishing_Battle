@@ -15,6 +15,7 @@ public class PlayerStatus : MonoBehaviour
         UseCardSkill usecardskill = GameObject.Find("PlayerCardCollector").GetComponent<UseCardSkill>();
         EnemyStatus.enemysuffer.Remove(offset);
         usecardskill.ResetSpecificFlag(offset.name);
+        offset.transform.parent = null;
         Destroy(offset);
         usecardskill.ReArrange();
     }
@@ -22,12 +23,8 @@ public class PlayerStatus : MonoBehaviour
     {
         UseCardSkill usecardskill = GameObject.Find("EnemyCardCollector").GetComponent<UseCardSkill>();
         usecardskill.ResetAllFlags();
-        Debug.Log(playersuffer.Count);
         foreach (GameObject skill in playersuffer)
-        {
-            //Debug.Log(skill.name);
             Destroy(GameObject.Find(skill.name));
-        }
         playersuffer.Clear();
         usecardskill.ReArrange();
     }

@@ -15,6 +15,7 @@ public class EnemyStatus : MonoBehaviour
         UseCardSkill usecardskill = GameObject.Find("EnemyCardCollector").GetComponent<UseCardSkill>();
         PlayerStatus.playersuffer.Remove(offset);
         usecardskill.ResetSpecificFlag(offset.name);
+        offset.transform.parent = null;
         Destroy(offset);
         usecardskill.ReArrange();
     }

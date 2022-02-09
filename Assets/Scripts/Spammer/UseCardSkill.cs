@@ -49,24 +49,24 @@ public class UseCardSkill : MonoBehaviour
         Destroy(this.gameObject.transform.GetChild(0).gameObject);
         // reduce 3 with 1 skill
         //Instantiate Card and Sample
-        int loopAvoid = 0;
         while (isThereRemainingSkill())
         {
-            if(loopAvoid == 100)
-            {
-                Debug.LogWarning("Detect infinite loop!");
-            }
-            loopAvoid += 1;
-            Debug.Log("loopInRemainingSkill");
             index = Random.Range(0, usableCards.Count);
-            if (this.gameObject.name == "PlayerCardCollector" && !flag[index])
+            if (flag[index])
+                continue;
+            if (this.gameObject.name == "PlayerCardCollector")
             {
                 flag[index] = true;
                 break;
             }
-            else if (this.gameObject.name == "EnemyCardCollector" && !flag[index])
+            else if (this.gameObject.name == "EnemyCardCollector")
             {
                 flag[index] = true;
+                break;
+            }
+            else
+            {
+                Debug.LogWarning("Detect infinite loop!");
                 break;
             }
         }
@@ -74,7 +74,6 @@ public class UseCardSkill : MonoBehaviour
         randomCard = Instantiate(usableCards[index]) as GameObject;
         foreach (GameObject sample in usableCardsSamples)
         {
-            Debug.Log("loopInUsableCard");
             if (usableCards[index].gameObject.name + "Example" == sample.name )
                 Instantiate(sample);
         }
@@ -113,9 +112,10 @@ public class UseCardSkill : MonoBehaviour
         for (int i = 0; i < Suffer.childCount; i++)
         {
             Suffer.GetChild(i).transform.position = new Vector3(0 + gapNumber * 2.5f, 0f, 0f);
+            Debug.Log(Suffer.GetChild(i).gameObject);
         }
 
-        for (int j = 0; j < Suffer.transform.childCount;j++)
+        for (int j = 0; j < Suffer.transform.childCount; j++)
         {
             Suffer.transform.GetChild(j).transform.position = new Vector3(Suffer.transform.position.x + gapNumber * j, Suffer.transform.position.y, 0f);
         }

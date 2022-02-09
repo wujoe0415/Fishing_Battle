@@ -97,5 +97,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyData: {fileID: 0}
   playerSuffer: {fileID: 0}
-  buffAttack: 50
-  shootDamage: 0
+  buffAttack: 25
+  shootDamage: 50

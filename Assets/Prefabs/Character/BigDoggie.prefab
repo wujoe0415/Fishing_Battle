@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 400
-  atk: 50
+  atk: 80
   def: 50
 --- !u!212 &1651856108393704675
 SpriteRenderer:
@@ -396,7 +396,7 @@ MonoBehaviour:
   BigDoggie: {fileID: 1651856108393704696}
   enemyGetHurt: {fileID: 0}
   judge: {fileID: 0}
-  minHp: 400
+  minHp: 100
 --- !u!1 &1651856108592312663
 GameObject:
   m_ObjectHideFlags: 0
