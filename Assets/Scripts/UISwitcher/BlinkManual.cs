@@ -11,13 +11,16 @@ public class BlinkManual : MonoBehaviour
     public Color targetColor;
     public Text text;
     bool Fadeaway = true;
+
+    [Range(0,10)]
+    public int delayTime = 0;
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<Text>();
         if (initColor == null)
             initColor = GetComponent<Text>().color;
-        StartCoroutine(Blink());
+        Invoke("Delay", delayTime);
     }
     IEnumerator Blink()
     {
@@ -41,5 +44,9 @@ public class BlinkManual : MonoBehaviour
                 Fadeaway = true;
             }
         }
+    }
+    void Delay()
+    {
+        StartCoroutine(Blink());
     }
 }

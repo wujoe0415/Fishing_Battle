@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Judge : MonoBehaviour
 {
     [SerializeField]
@@ -29,6 +29,8 @@ public class Judge : MonoBehaviour
         {
             Destroy(battle.transform.GetChild(0).gameObject);
             lose.SetActive(true);
+            Debug.Log("Lose Animation");
+            SceneManager.LoadScene(3);
             //GameOver
         }
         else if (BattleInitiation.i == 5 && tag == "Enemy") // win
@@ -54,6 +56,8 @@ public class Judge : MonoBehaviour
         indexFight++;
         if(indexFight == 6)
         {
+            Debug.Log("Sucess Animation");
+            SceneManager.LoadScene(2);
             //GameOver
         }
         init.Initiate(indexFight);
