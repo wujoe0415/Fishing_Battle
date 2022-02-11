@@ -32,7 +32,6 @@ public class BubbleShooter : MonoBehaviour
     {
         if (RandomAttack.isAttacking && !isRelease)
         {
-            Debug.Log("in Attack");
             isRelease = true;
             if (FaceWhere.isFaceRight(this.gameObject))
                 Attack("Right");
@@ -62,7 +61,6 @@ public class BubbleShooter : MonoBehaviour
     }
     void StopAttack(string dir)
     {
-        Debug.Log("Stop");
         if (dir == "Right")
             bubble.transform.position = this.gameObject.transform.position + new Vector3(originGap, 0, 0);
         else if (dir == "Left")

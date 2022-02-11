@@ -17,7 +17,6 @@ public class BubbleDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.name);
         if (other.gameObject.tag == "Player")
             playerSuffer.SufferDamage(Self.atk - Player.def);
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class INeedToBeHorny : MonoBehaviour
+public class INeedToBeHorny : MonoBehaviour,CardContinue
 {
     GeneralHuman Player;
     GeneralHuman Enemy;
@@ -14,9 +14,7 @@ public class INeedToBeHorny : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = BattleInitiation.currentPlayer.GetComponent<GeneralHuman>();
-        Enemy = BattleInitiation.currentEnemy.GetComponent<GeneralHuman>();
-        EenmyHurt = BattleInitiation.currentEnemy.GetComponent<GetHurt>();
+        
         StrengthPlayer();
         Check();
     }
@@ -37,6 +35,9 @@ public class INeedToBeHorny : MonoBehaviour
 
     void StrengthPlayer()
     {
+        Player = BattleInitiation.currentPlayer.GetComponent<GeneralHuman>();
+        Enemy = BattleInitiation.currentEnemy.GetComponent<GeneralHuman>();
+        EenmyHurt = BattleInitiation.currentEnemy.GetComponent<GetHurt>();
         Player.atk += buffAtk;
         Player.def += buffDef;
 
@@ -46,5 +47,9 @@ public class INeedToBeHorny : MonoBehaviour
     {
         Player.atk -= buffAtk;
         Player.def -= buffDef;
+    }
+    public void Card()
+    {
+        StrengthPlayer();
     }
 }

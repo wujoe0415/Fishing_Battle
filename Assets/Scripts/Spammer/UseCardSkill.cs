@@ -30,15 +30,10 @@ public class UseCardSkill : MonoBehaviour
         if (this.gameObject.transform.childCount >= 3 && !PauseGame.isPause &&  isThereRemainingSkill())
         {
             if (Input.GetKey(KeyCode.C) /*&& this.gameObject.name == "PlayerCardCollector"*/ && BattleInitiation.currentEnemy != null)
-            {
-                Debug.Log("inPlayer");
                 UseCard();
-            }
+            
             else if (this.gameObject.name == "EnemyCardCollector" && BattleInitiation.currentPlayer != null)
-            {
-                Debug.Log("inEnemy");
                 UseCard();
-            }
         }
     }
 
@@ -110,15 +105,10 @@ public class UseCardSkill : MonoBehaviour
     {
         GetSuffer();
         for (int i = 0; i < Suffer.childCount; i++)
-        {
             Suffer.GetChild(i).transform.position = new Vector3(0 + gapNumber * 2.5f, 0f, 0f);
-            Debug.Log(Suffer.GetChild(i).gameObject);
-        }
 
         for (int j = 0; j < Suffer.transform.childCount; j++)
-        {
             Suffer.transform.GetChild(j).transform.position = new Vector3(Suffer.transform.position.x + gapNumber * j, Suffer.transform.position.y, 0f);
-        }
     }
     private void KickCard(int index)
     {

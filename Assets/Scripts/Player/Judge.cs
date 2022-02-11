@@ -43,6 +43,7 @@ public class Judge : MonoBehaviour
         else if (tag == "Enemy") // win
         {
             //temp win
+            ClearUsedCard();
             win.SetActive(true);
             Invoke("TurnOffWinLoseAudio", blankTime);
         }
@@ -52,12 +53,13 @@ public class Judge : MonoBehaviour
     {
         win.SetActive(false);
 
-        //Initiate Nect Fight
+        //Initiate Next Fight
         indexFight++;
         if(indexFight == 6)
         {
             StartCoroutine(Transmit(2));
-            // Victory
+
+            return;// Victory
         }
         init.Initiate(indexFight);
         bgm.Play();
@@ -69,5 +71,11 @@ public class Judge : MonoBehaviour
         transmition.SetTrigger("FishLeave");
         yield return new WaitForSeconds(transmitTime); // 1s to complete the animation
         SceneManager.LoadScene(nextScene);
+    }
+
+    void ClearUsedCard()
+    {
+        if (GameObject.Find("PlayerCardEffect").transform.childCount > 0)
+            PlayerStatus.ClearAllPlayerStatus();
     }
 }

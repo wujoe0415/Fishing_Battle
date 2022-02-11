@@ -34,7 +34,6 @@ public class BattleInitiation : MonoBehaviour
             currentEnemy.name = EnemyPrefabs[i].name;
             currentEnemy.transform.parent = BattleArena;
         }
-        Debug.Log(currentEnemy);
         FishingRodAttack player = currentPlayer.GetComponent<FishingRodAttack>();
         player.currentEnemy = currentEnemy.gameObject;
         player.enemyGetHurt = currentEnemy.gameObject.GetComponent<GetHurt>();
@@ -54,4 +53,16 @@ public class BattleInitiation : MonoBehaviour
         }
     }
 
+    //void UseCard()
+    //{
+    //    GameObject usedCard = GameObject.Find("PlayerCardEffect");
+    //    int chlidNum = usedCard.transform.childCount;
+    //    if (chlidNum != 0)
+    //    {
+    //        for(int i = 0; i< chlidNum;i++)
+    //        {
+    //            if(usedCard.transform.GetChild(i).name == "Shoot(Clone)")
+    //        }
+    //    }
+    //}
 }

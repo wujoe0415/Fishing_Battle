@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Magician : MonoBehaviour
+public interface CardContinue {
+    void Card();
+}
+public class Magician : MonoBehaviour,CardContinue
 {
     GeneralHuman PlayerData;
     GetHurt PlayerGetHurt;
@@ -14,9 +16,6 @@ public class Magician : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerData = BattleInitiation.currentPlayer.GetComponent<GeneralHuman>();
-        PlayerGetHurt = BattleInitiation.currentPlayer.GetComponent<GetHurt>();
-        PlayerStatus.ClearAllPlayerStatus();
         //EnemyStatus.addEnemySkill(this.gameObject);
         //PlayerStatus.UnAvailSkill(this.gameObject);
         MagicianSkill();
@@ -30,6 +29,10 @@ public class Magician : MonoBehaviour
 
     void MagicianSkill()
     {
+        PlayerData = BattleInitiation.currentPlayer.GetComponent<GeneralHuman>();
+        PlayerGetHurt = BattleInitiation.currentPlayer.GetComponent<GetHurt>();
+        PlayerStatus.ClearAllPlayerStatus();
+
         PlayerData.atk += buffAttack;
         PlayerData.def += buffDEF;
 
@@ -52,5 +55,9 @@ public class Magician : MonoBehaviour
             if (temp != null)
                 EnemyStatus.offsetEnemySkill(temp);
         }
+    }
+    public void Card()
+    {
+        MagicianSkill();
     }
 }

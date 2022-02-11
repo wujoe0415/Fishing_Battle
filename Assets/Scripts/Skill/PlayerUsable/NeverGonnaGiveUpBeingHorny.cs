@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NeverGonnaGiveUpBeingHorny : MonoBehaviour
+public class NeverGonnaGiveUpBeingHorny : MonoBehaviour,CardContinue
 {
     GeneralHuman PlayerData;
     GetHurt PlayerPlus;
@@ -12,8 +12,6 @@ public class NeverGonnaGiveUpBeingHorny : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerData = BattleInitiation.currentPlayer.GetComponent<GeneralHuman>();
-        PlayerPlus = BattleInitiation.currentPlayer.GetComponent<GetHurt>();
         Skill();
         Check();
     }
@@ -24,6 +22,8 @@ public class NeverGonnaGiveUpBeingHorny : MonoBehaviour
 
     private void Skill()
     {
+        PlayerData = BattleInitiation.currentPlayer.GetComponent<GeneralHuman>();
+        PlayerPlus = BattleInitiation.currentPlayer.GetComponent<GetHurt>();
         PlayerData.def += buffDef;
         PlayerData.atk += buffAtk;
 
@@ -48,5 +48,9 @@ public class NeverGonnaGiveUpBeingHorny : MonoBehaviour
     {
         PlayerData.def -= buffDef;
         PlayerData.atk -= buffAtk;
+    }
+    public void Card()
+    {
+        Skill();
     }
 }

@@ -43,7 +43,6 @@ public class EnemyStatus : MonoBehaviour
         {
             if (a.name == name)
             {
-                Debug.Log("enemysuffer remove "+ name);
                 enemysuffer.Remove(a);
                 return true;
             }

@@ -78,14 +78,10 @@ public class RandomAttack : MonoBehaviour
     }
     private bool ishitPlayer()
     {
-        Debug.Log("attackPointL.position.x : " + attackPointL.position.x);
-        Debug.Log("attackPointR.position.x : " + attackPointR.position.x);
-
         if (!FaceWhere.isFaceRight(this.gameObject) && playerPosition.position.x <= transform.position.x && attackPointL.position.x < playerPosition.position.x /*&& a_spriteRenderer.flipX == false*/)
             return true;
         else if (FaceWhere.isFaceRight(this.gameObject) && playerPosition.position.x >= transform.position.x && attackPointR.position.x > playerPosition.position.x/* && a_spriteRenderer.flipX == true */)
             return true;
-        
         else
             return false;
     }
