@@ -22,18 +22,18 @@ public class PauseGame : MonoBehaviour
         if (Time.timeScale == 0f) // resume
         {
             Time.timeScale = 1;
-            Debug.Log("Resume");
+            //Debug.Log("Resume");
             pauseUI.SetActive(false);
             isPause = false;
-            Debug.Log("PauseGame.isPause = " + PauseGame.isPause);
+            //Debug.Log("PauseGame.isPause = " + PauseGame.isPause);
         }
         else if (Time.timeScale == 1.0f) // pause
         {
             Time.timeScale = 0;
-            Debug.Log("Pause");
+            //Debug.Log("Pause");
             pauseUI.SetActive(true);
             isPause = true;
-            Debug.Log("PauseGame.isPause = " + PauseGame.isPause);
+            //Debug.Log("PauseGame.isPause = " + PauseGame.isPause);
         }
     }
 }
