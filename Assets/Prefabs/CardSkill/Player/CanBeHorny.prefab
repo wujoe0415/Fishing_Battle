@@ -95,6 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed4433cb4c68b747a683e74c930597d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debuffAttack: 20
+  debuffAttack: 15
   debuffDef: 10
   recoverHp: 40

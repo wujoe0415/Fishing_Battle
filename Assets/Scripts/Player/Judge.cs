@@ -7,11 +7,15 @@ public class Judge : MonoBehaviour
     [SerializeField]
     public GameObject battle;
     public GameObject win;
-    public GameObject lose;
     public AudioSource bgm;
     public BattleInitiation init;
     private int indexFight = 0;
     public float blankTime = 5f;
+
+    public Animator transmition;
+    [Range(0f, 5f)]
+    public float transmitTime = 2f;
+
     void Start()
     {
         battle = GameObject.FindGameObjectWithTag("Battle");
@@ -28,15 +32,12 @@ public class Judge : MonoBehaviour
         if (tag == "Player") //lose
         {
             Destroy(battle.transform.GetChild(0).gameObject);
-            lose.SetActive(true);
-            Debug.Log("Lose Animation");
-            SceneManager.LoadScene(3);
-            //GameOver
+            StartCoroutine(Transmit(3));
+            // Lose
         }
         else if (BattleInitiation.i == 5 && tag == "Enemy") // win
         {
             //true win
-            win.SetActive(true);
             Invoke("TurnOffWinLoseAudio", blankTime);
         }
         else if (tag == "Enemy") // win
@@ -49,19 +50,24 @@ public class Judge : MonoBehaviour
     }
     private void TurnOffWinLoseAudio()
     {
-        lose.SetActive(false);
         win.SetActive(false);
 
         //Initiate Nect Fight
         indexFight++;
         if(indexFight == 6)
         {
-            Debug.Log("Sucess Animation");
-            SceneManager.LoadScene(2);
-            //GameOver
+            StartCoroutine(Transmit(2));
+            // Victory
         }
         init.Initiate(indexFight);
         bgm.Play();
     }
-    
+
+    IEnumerator Transmit(int nextScene)
+    {
+        transmition = GameObject.Find("TransmitionFish").GetComponent<Animator>();
+        transmition.SetTrigger("FishLeave");
+        yield return new WaitForSeconds(transmitTime); // 1s to complete the animation
+        SceneManager.LoadScene(nextScene);
+    }
 }

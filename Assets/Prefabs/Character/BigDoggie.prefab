@@ -86,8 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 400
-  atk: 80
-  def: 50
+  atk: 90
+  def: 60
 --- !u!212 &1651856108393704675
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -97,5 +97,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   temp: {fileID: 0}
   debuffAtk: 20
-  debuffDef: 15
+  debuffDef: 20
   recoverHP: 25

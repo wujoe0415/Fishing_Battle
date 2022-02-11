@@ -96,4 +96,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSuffer: {fileID: 0}
-  directDamage: 30
+  directDamage: 50

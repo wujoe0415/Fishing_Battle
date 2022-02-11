@@ -240,10 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decc79d7e177c4749bc0c392f716e071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontal: 0.002
+  horizontal: 0.01
   targetPosition: {x: 0, y: 0, z: 0}
   playerPosition: {fileID: 0}
-  speedAdjust: 1000
+  speedAdjust: 200
   stayTime: 0
   timer: 0
   isStaying: 0

@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 400
-  atk: 30
+  atk: 35
   def: 20
 --- !u!114 &2303952730986020330
 MonoBehaviour:
