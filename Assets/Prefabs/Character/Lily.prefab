@@ -254,8 +254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
-  atk: 90
-  def: 70
+  atk: 95
+  def: 90
 --- !u!114 &6184868137883538520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ MonoBehaviour:
   horizontal: 0.01
   targetPosition: {x: 0, y: 0, z: 0}
   playerPosition: {fileID: 0}
-  speedAdjust: 750
+  moveSpeed: 850
   stayTime: 0
   timer: 0
   isStaying: 0

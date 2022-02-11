@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 3100471033287768763, guid: 7a2d56805bfcbcc42b94bf1c7f12c3b5, type: 3}
   minspamCycle: 0.8
-  maxspamCycle: 2
+  maxspamCycle: 1.5
   minX: -6.4
   maxX: 6.2
 --- !u!4 &547751140
