@@ -19,6 +19,8 @@ public class UseCardSkill : MonoBehaviour
         GetSuffer();
         flag = new bool[usableCards.Count];
         ResetAllFlags();
+        EnemyStatus.enemysuffer.Clear();
+        PlayerStatus.playersuffer.Clear();
     }
     private void Update()
     {

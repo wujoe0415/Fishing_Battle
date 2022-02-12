@@ -38,6 +38,8 @@ public class BattleInitiation : MonoBehaviour
         player.currentEnemy = currentEnemy.gameObject;
         player.enemyGetHurt = currentEnemy.gameObject.GetComponent<GetHurt>();
         player.EnemyData = currentEnemy.gameObject.GetComponent<GeneralHuman>();
+
+        CardStorage.SpawnUsedCard();
     }
     public void Initiate()
     {

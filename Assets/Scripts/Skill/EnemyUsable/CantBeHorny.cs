@@ -2,33 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CantBeHorny : MonoBehaviour,CardContinue
+public class CantBeHorny : MonoBehaviour
 {
     GeneralHuman Player;
     GeneralHuman Enemy;
     GetHurt enemyPlus;
 
-    public GameObject temp;
+    private GameObject temp;
+
     public int debuffAtk = 5;
     public int debuffDef = 10;
     public int recoverHP = 20;
     // Start is called before the first frame update
     void Start()
     {
-        WeakenPlayerAndStrength();
+        enemyPlus = BattleInitiation.currentEnemy.GetComponent<GetHurt>();
+        enemyPlus.RecoverHealth(recoverHP);
         Check();
+    }
+    void OnEnable()
+    {
+        WeakenPlayerAndStrength();
     }
 
     void WeakenPlayerAndStrength()
     {
         Player = BattleInitiation.currentPlayer.GetComponent<GeneralHuman>();
         Enemy = BattleInitiation.currentEnemy.GetComponent<GeneralHuman>();
-        enemyPlus = BattleInitiation.currentEnemy.GetComponent<GetHurt>();
 
         Player.atk -= debuffAtk;
         Player.def -= debuffDef;
-
-        enemyPlus.RecoverHealth(recoverHP);
     }
 
     void OnDisable()
@@ -51,9 +54,5 @@ public class CantBeHorny : MonoBehaviour,CardContinue
                 PlayerStatus.offsetPlayerSkill(temp);
             }
         }
-    }
-    public void Card()
-    {
-        WeakenPlayerAndStrength();
     }
 }

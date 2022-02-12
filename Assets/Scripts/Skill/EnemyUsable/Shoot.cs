@@ -11,18 +11,23 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EnemyData = BattleInitiation.currentEnemy.GetComponent<GeneralHuman>();
-        playerSuffer = BattleInitiation.currentPlayer.GetComponent<GetHurt>();
-        BoostATK();
         Check();
+        ShootDamage();
     }
-
+    private void OnEnable()
+    {
+        BoostATK();
+    }
     private void BoostATK()
     {
+        EnemyData = BattleInitiation.currentEnemy.GetComponent<GeneralHuman>();
         EnemyData.atk += buffAttack;
+    }
+    private void ShootDamage()
+    {
+        playerSuffer = BattleInitiation.currentPlayer.GetComponent<GetHurt>();
         playerSuffer.SufferDamage(shootDamage);
     }
-
     private void OnDisable()
     {
         Recover();

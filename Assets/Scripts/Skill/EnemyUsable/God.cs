@@ -13,13 +13,12 @@ public class God : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EnemyGetHurt = BattleInitiation.currentEnemy.GetComponent<GetHurt>();
-        EnemyData = BattleInitiation.currentEnemy.GetComponent<GeneralHuman>();
-        EnemyStatus.ClearAllEnemyStatus();
-        //EnemyStatus.UnAvailSkill(this.gameObject);
         Check();
     }
-    
+    private void OnEnable()
+    {
+        GodSkill();
+    }
     void OnDisable()
     {
         Recover();
@@ -27,6 +26,10 @@ public class God : MonoBehaviour
 
     void GodSkill()
     {
+        EnemyGetHurt = BattleInitiation.currentEnemy.GetComponent<GetHurt>();
+        EnemyData = BattleInitiation.currentEnemy.GetComponent<GeneralHuman>();
+        EnemyStatus.ClearAllEnemyStatus();
+
         EnemyData.def += buffDef;
         EnemyGetHurt.RecoverHealth(recoverHp);
         EnemyData.atk += buffAtk;
