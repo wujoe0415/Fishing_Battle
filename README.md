@@ -1,4 +1,4 @@
-#　Fish Battle Game
+# Fish Battle Game
 
 ## 發想
 
@@ -22,13 +22,13 @@
 
 ## 遊戲介面
 
-<img src="C:\Users\FX503VM\AppData\Roaming\Typora\typora-user-images\image-20220214150349917.png" alt="image-20220214150349917" style="zoom:50%;" />
+<img src="https://i.imgur.com/9viMTb8.png" alt="image-20220214150349917" style="zoom:100%;" />
 
-<img src="C:\Users\FX503VM\AppData\Roaming\Typora\typora-user-images\image-20220214150440568.png" alt="image-20220214150440568" style="zoom:50%;" />
+<img src="https://i.imgur.com/CG8vccD.png" alt="image-20220214150440568" style="zoom:100%;" />
 
-<img src="C:\Users\FX503VM\AppData\Roaming\Typora\typora-user-images\image-20220214150523605.png" alt="image-20220214150523605" style="zoom:50%;" />
+<img src="https://i.imgur.com/9qp2TAG.png" alt="image-20220214150523605" style="zoom:100%;" />
 
-<img src="C:\Users\FX503VM\AppData\Roaming\Typora\typora-user-images\image-20220214150610183.png" alt="image-20220214150610183" style="zoom:50%;" />
+<img src="https://i.imgur.com/4HJ5PzD.png" alt="image-20220214150610183" style="zoom:100%;" />
 
 ## 協作者
 
