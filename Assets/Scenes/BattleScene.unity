@@ -1408,7 +1408,7 @@ GameObject:
   - component: {fileID: 657395226}
   m_Layer: 5
   m_Name: EnemyDecreaseHp
-  m_TagString: PlayerBar
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2403,7 +2403,7 @@ GameObject:
   - component: {fileID: 1189381155}
   m_Layer: 5
   m_Name: PlayerDecreaseHp
-  m_TagString: PlayerBar
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
