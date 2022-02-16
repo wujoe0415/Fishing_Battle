@@ -74,8 +74,12 @@ public class GetHurt : MonoBehaviour
     }
     public void SufferSkill(int damage)
     {
-        sa_animator.SetTrigger("SufferAttack");
+        if (damage < 0) // invalid damage
+            return;
+
         currentHealth -= damage;
+        if (currentHealth < 1)
+            judge.JudgeWinorLose(this.gameObject.tag);
 
         currentHealth = currentHealth >= 0 ? currentHealth : 0;
         shadowBar.DecreaseHp(currentHealth);
