@@ -13,14 +13,14 @@ public class DisplayName : MonoBehaviour
         if (GameObject.Find("GetPlayerName") != null)
             playerName = GameObject.Find("GetPlayerName").GetComponent<GetPlayerName>().GetName();
         
-        if (this.gameObject.name == "PlayerName")
+        if (this.gameObject.name == "PlayerName" && BattleInitiation.currentPlayer != null)
         {
             if (playerName == "")
                 name.text = BattleInitiation.currentPlayer.name;
             else
                 name.text = playerName;
         }
-        else if (this.gameObject.name == "EnemyName")
+        else if (this.gameObject.name == "EnemyName" && BattleInitiation.currentEnemy!= null)
             name.text = BattleInitiation.currentEnemy.name;
         else
             Debug.LogWarning("NameError");

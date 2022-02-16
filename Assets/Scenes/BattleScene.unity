@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 50433037}
   - component: {fileID: 50433039}
   - component: {fileID: 50433038}
+  - component: {fileID: 50433040}
   m_Layer: 12
   m_Name: EnemyData
   m_TagString: Untagged
@@ -225,13 +226,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '200
+  m_Text: '0
 
 
-    50
+    0
 
 
-    50  '
+    0  '
 --- !u!222 &50433039
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -240,6 +241,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50433036}
   m_CullTransparentMesh: 1
+--- !u!114 &50433040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50433036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9ddba61aa80c64fbe59c9da6473c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 0}
 --- !u!1 &115537794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,7 +1872,6 @@ GameObject:
   - component: {fileID: 897654767}
   - component: {fileID: 897654766}
   - component: {fileID: 897654768}
-  - component: {fileID: 897654769}
   m_Layer: 12
   m_Name: PlayerData
   m_TagString: Untagged
@@ -1918,7 +1931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "100 \n\n20\n\n30\n  "
+  m_Text: "0 \n\n0\n\n0\n  "
 --- !u!222 &897654767
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1939,18 +1952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe9ddba61aa80c64fbe59c9da6473c2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &897654769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897654764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe9ddba61aa80c64fbe59c9da6473c2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  data: {fileID: 0}
 --- !u!1 &978748704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,7 +2368,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fish
+  m_Text: Enemy
 --- !u!222 &1138256016
 CanvasRenderer:
   m_ObjectHideFlags: 0

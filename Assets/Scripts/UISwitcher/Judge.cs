@@ -31,18 +31,19 @@ public class Judge : MonoBehaviour
 
         if (tag == "Player") //lose
         {
+            BattleInitiation.currentPlayer = null;
             Destroy(battle.transform.GetChild(0).gameObject);
             StartCoroutine(Transmit(3));
             // Lose
         }
-        else if (BattleInitiation.i == 5 && tag == "Enemy") // win
+        else if (BattleInitiation.i == 5 && tag == "Enemy") // true win
         {
-            //true win
+            BattleInitiation.currentEnemy = null;
             Invoke("TurnOffWinLoseAudio", blankTime);
         }
-        else if (tag == "Enemy") // win
+        else if (tag == "Enemy") // temp win
         {
-            //temp win
+            BattleInitiation.currentEnemy = null;
             CardStorage.ClearUsedCard();
             win.SetActive(true);
             Invoke("TurnOffWinLoseAudio", blankTime);

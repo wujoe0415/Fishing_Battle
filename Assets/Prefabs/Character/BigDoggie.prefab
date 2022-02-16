@@ -199,6 +199,7 @@ MonoBehaviour:
   currentHealth: 0
   ch: {fileID: 0}
   bar: {fileID: 0}
+  shadowBar: {fileID: 0}
   Self: {fileID: 1651856108393704696}
   judge: {fileID: 0}
 --- !u!50 &1651856108393704702

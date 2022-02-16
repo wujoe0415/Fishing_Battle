@@ -95,7 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5464e424aa18a7d4481a69792a0aa456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temp: {fileID: 0}
-  debuffAtk: 20
+  debuffAtk: 30
   debuffDef: 30
   recoverHP: 25

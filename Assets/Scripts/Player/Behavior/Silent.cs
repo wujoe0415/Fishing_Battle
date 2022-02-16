@@ -20,11 +20,9 @@ public class Silent : MonoBehaviour
     void Start()
     {
         video = GameObject.Find("SilentWench").GetComponent<VideoPlayer>();
-        BattleArena = GameObject.FindGameObjectWithTag("Battle");
         BGM = GameObject.Find("BGM").GetComponent<AudioSource>();
         video.enabled = false;
         judge = GameObject.Find("Judge").GetComponent<Judge>();
-        BattleCanvas = GameObject.Find("BattleCanvas");
         SilentCanvas = GameObject.Find("SkillCanvas");
         enemyGetHurt = BattleInitiation.currentEnemy.GetComponent<GetHurt>();
         BigDoggie = GetComponent<GeneralHuman>();
@@ -34,28 +32,27 @@ public class Silent : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if ( BigDoggie.hp < minHp && (BattleInitiation.currentEnemy.name == "RedLeaf" || BattleInitiation.currentEnemy.name == "Teacher") && BattleInitiation.currentPlayer != null )
             {
+                Time.timeScale = 0;
                 enemyGetHurt = BattleInitiation.currentEnemy.GetComponent<GetHurt>();
-                enemyGetHurt.SufferSkill(400);
-                BattleArena.SetActive(false);
+                enemyGetHurt.SufferSkill(BattleInitiation.currentEnemy.GetComponent<GeneralHuman>().hp);
+                
                 BGM.Stop();
                 SilentCanvas.SetActive(true);
                 useSilentSkill = true;
                 
-                BattleCanvas.SetActive(false);
                 video.enabled = true;
 
+                Time.timeScale = 1;
                 Invoke("TurnOffVideo", 6.5f);
             }
         }
     }
     void TurnOffVideo()
     {
-        BattleArena.SetActive(true);
-        BattleCanvas.SetActive(true);
         video.Stop();
         video.enabled = false;
         SilentCanvas.SetActive(false);
