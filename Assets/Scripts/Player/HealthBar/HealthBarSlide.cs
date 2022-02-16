@@ -9,12 +9,12 @@ public class HealthBarSlide : MonoBehaviour
     public Gradient gradiant;
     public Image fill;
     // Start is called before the first frame update
-   public void SetHealth(int health)
-   {
+    public void SetHealth(int health)
+    {
         slide.value = health;
 
         fill.color = gradiant.Evaluate(slide.normalizedValue);
-   }
+    }
     public void MaxSetHealth(int health)
     {
         slide.maxValue = health;

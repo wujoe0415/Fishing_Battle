@@ -10,6 +10,7 @@ public class GetHurt : MonoBehaviour
 
     public CountHealth ch;
     public HealthBarSlide bar;
+    public ShadowBar shadowBar;
 
     //public  bool GameOver = false;
     public GeneralHuman Self;
@@ -25,16 +26,19 @@ public class GetHurt : MonoBehaviour
         {
             ch = GameObject.FindGameObjectWithTag("EnemyBarNum").GetComponent<CountHealth>();
             bar = GameObject.FindGameObjectWithTag("EnemyBar").GetComponent<HealthBarSlide>();
+            shadowBar = GameObject.Find("EnemyDecreaseHp").GetComponent<ShadowBar>();
         }
         else if (this.gameObject.tag == "Player")
         {
             ch = GameObject.FindGameObjectWithTag("PlayBarNum").GetComponent<CountHealth>();
             bar = GameObject.FindGameObjectWithTag("PlayerBar").GetComponent<HealthBarSlide>();
+            shadowBar = GameObject.Find("PlayerDecreaseHp").GetComponent<ShadowBar>();
         }
         Self = GetComponent<GeneralHuman>();
         maxHealth = Self.hp;
         currentHealth = maxHealth;
         bar.MaxSetHealth(maxHealth);
+        shadowBar.SetMaxHealth(maxHealth);
 
         //Animation && Audio
         sa_animator = GetComponent<Animator>();
@@ -51,6 +55,7 @@ public class GetHurt : MonoBehaviour
         if (currentHealth < 1)
             judge.JudgeWinorLose(this.gameObject.tag);
 
+        shadowBar.DecreaseHp(currentHealth >= 0 ? currentHealth : 0);
         bar.SetHealth(currentHealth >= 0 ? currentHealth : 0);
         ch.SetHealth(currentHealth >= 0 ? currentHealth : 0);
         Self.hp = currentHealth >= 0 ? currentHealth : 0;
@@ -62,6 +67,7 @@ public class GetHurt : MonoBehaviour
             currentHealth = maxHealth;
 
         bar.SetHealth(currentHealth);
+        shadowBar.SetHealth(currentHealth);
         ch.SetHealth(currentHealth);
         Self.hp = currentHealth;
     }
@@ -70,6 +76,7 @@ public class GetHurt : MonoBehaviour
         sa_animator.SetTrigger("SufferAttack");
         currentHealth -= damage;
 
+        shadowBar.DecreaseHp(currentHealth >= 0 ? currentHealth : 0);
         bar.SetHealth(currentHealth >= 0 ? currentHealth : 0);
         ch.SetHealth(currentHealth >= 0 ? currentHealth : 0);
         Self.hp = currentHealth >= 0 ? currentHealth : 0;
