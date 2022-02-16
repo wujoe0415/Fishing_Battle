@@ -1,4 +1,8 @@
-# Fish Battle Game
+# Fish Battle Game DLC
+
+## 主視覺
+
+<img src="https://i.imgur.com/lHwu5ny.png" alt="image-20220214150349917" style="zoom:100%;" />
 
 ## 發想
 
