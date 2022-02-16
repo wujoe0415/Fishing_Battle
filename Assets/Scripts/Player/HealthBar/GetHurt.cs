@@ -55,10 +55,11 @@ public class GetHurt : MonoBehaviour
         if (currentHealth < 1)
             judge.JudgeWinorLose(this.gameObject.tag);
 
-        shadowBar.DecreaseHp(currentHealth >= 0 ? currentHealth : 0);
-        bar.SetHealth(currentHealth >= 0 ? currentHealth : 0);
-        ch.SetHealth(currentHealth >= 0 ? currentHealth : 0);
-        Self.hp = currentHealth >= 0 ? currentHealth : 0;
+        currentHealth = currentHealth >= 0 ? currentHealth : 0;
+        shadowBar.DecreaseHp(currentHealth);
+        bar.SetHealth(currentHealth);
+        ch.SetHealth(currentHealth);
+        Self.hp = currentHealth;
     }
     public void RecoverHealth(int recover)
     {
@@ -76,10 +77,11 @@ public class GetHurt : MonoBehaviour
         sa_animator.SetTrigger("SufferAttack");
         currentHealth -= damage;
 
-        shadowBar.DecreaseHp(currentHealth >= 0 ? currentHealth : 0);
-        bar.SetHealth(currentHealth >= 0 ? currentHealth : 0);
-        ch.SetHealth(currentHealth >= 0 ? currentHealth : 0);
-        Self.hp = currentHealth >= 0 ? currentHealth : 0;
+        currentHealth = currentHealth >= 0 ? currentHealth : 0;
+        shadowBar.DecreaseHp(currentHealth);
+        bar.SetHealth(currentHealth);
+        ch.SetHealth(currentHealth);
+        Self.hp = currentHealth;
     }
 }
 

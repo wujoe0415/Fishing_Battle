@@ -45,7 +45,6 @@ public class ShadowBar : MonoBehaviour
     {
         for (float i = currentHp; i > targetHp; i -= decreaseAmount)
         {
-            Debug.Log(currentHp);
             currentHp = i;
             slide.value = currentHp;
             fill.color = gradiant.Evaluate(slide.normalizedValue);
