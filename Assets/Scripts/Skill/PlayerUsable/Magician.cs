@@ -36,7 +36,7 @@ public class Magician : MonoBehaviour,CardContinue
         PlayerData.atk += buffAttack;
         PlayerData.def += buffDEF;
 
-        PlayerGetHurt.SufferDamage(sacrificeHP);
+        PlayerGetHurt.SufferSkill(sacrificeHP);
     }
     void Recover()
     {

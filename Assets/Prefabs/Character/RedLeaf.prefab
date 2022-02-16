@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 300
-  atk: 100
+  atk: 95
   def: 95
 --- !u!114 &5238014451532138089
 MonoBehaviour:
@@ -171,6 +171,7 @@ MonoBehaviour:
   currentHealth: 0
   ch: {fileID: 0}
   bar: {fileID: 0}
+  shadowBar: {fileID: 0}
   Self: {fileID: 5238014451532138088}
   judge: {fileID: 0}
 --- !u!114 &5238014451532138090

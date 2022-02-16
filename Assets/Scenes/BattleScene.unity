@@ -762,8 +762,8 @@ MonoBehaviour:
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 9445
-    ctime1: 27756
+    ctime0: 14649
+    ctime1: 35466
     ctime2: 65535
     ctime3: 65535
     ctime4: 56476
@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHp: 0
-  decreaseTime: 6
+  decreaseTime: 8
   slide: {fileID: 657395227}
   gradiant:
     serializedVersion: 2
@@ -2439,7 +2439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHp: 0
-  decreaseTime: 6
+  decreaseTime: 8
   slide: {fileID: 1189381156}
   gradiant:
     serializedVersion: 2

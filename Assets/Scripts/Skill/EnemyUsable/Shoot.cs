@@ -26,7 +26,7 @@ public class Shoot : MonoBehaviour
     private void ShootDamage()
     {
         playerSuffer = BattleInitiation.currentPlayer.GetComponent<GetHurt>();
-        playerSuffer.SufferDamage(shootDamage);
+        playerSuffer.SufferSkill(shootDamage);
     }
     private void OnDisable()
     {
